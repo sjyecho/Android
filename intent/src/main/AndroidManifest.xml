@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.intent">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Demo01">
+        <activity
+            android:name=".DataAttr"
+            android:exported="true">
+            <intent-filter>
+                <!--决定应用的入口Activity,也就是我们启动应用时首先显示哪一个Activity-->
+                <action android:name="android.intent.action.MAIN" />
+                <!--表示activity应该被列入系统的启动器(launcher)(允许用户启动它).Launcher是安卓系统中的桌面启动器,是桌面UI的统称-->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--android:exported-是否支持其它应用调用当前组件-->
+        <activity
+            android:name=".SecondActivity"
+            android:label="@string/app_name"
+            android:exported="false">
+            <intent-filter>
+                <!--指定该Activity能响应action为指定字符串的Intent-->
+                <action android:name="action"/>
+                <!--指定该Activity能响应Category为指定字符串的intent-->
+                <category android:name="category"/>
+                <!--指定该Activity能响应category为android.intent.category.DEFAULT的intent-->
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

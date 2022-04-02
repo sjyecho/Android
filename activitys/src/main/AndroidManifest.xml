@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.activitys">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Demo01">
+
+        <!--
+            android:launchMode 指定Activity的四种启动模式
+                standard:
+                    默认启动模式，当不指定Activity的启动模式，则使用这种启动方式启动Activity；
+                    这种启动方式每次都会创建新的实例，新创建的activity会置于栈顶
+                singleTop(栈顶复用模式:):
+                    如果指定启动模式为singleTop模式，那么在启动时，系统会判断当前栈顶的Activity是不是要启动的Activity,
+                    如果是则不创建新的Activity而直接复用这个Activity，同时回掉Activity的onNewIntent方法；
+                    如果不是，则创建新的Activity，即使栈内已存在该Activity
+                singleTask(栈内复用模式):
+                    一个具有singleTask启动模式的Activity请求启动后，比如Activity A，
+                    系统首先会寻找是否存在A想要的任务栈，如果不存在，就重新创建一个任务栈，并将A的实例放入栈中。
+                    如果存在A所需要的任务栈，这时候要看A是否在栈中有实例存在，
+                    如果栈中不存在该实例，创建该Activity的实例并放入占中，如果栈中存在该Activity，复用该Activity，
+                    同时将位于该Activity上面的Activity全部销毁
+                singleInstance:
+                    这种启动模式和singleTask几乎一样，它也只允许系统中存在一个目标Activity，
+                    包括上面我们所说的SingleTask的一些特性singleInstance都有。
+                    singleInstance翻译过来是单例的意思：TA有两层含义：1.告诉系统，我是独一无二的，
+                    2.告诉任务栈我是独一无二的，也就是说，任务栈中除了我不能再有其他Activity。
+        -->
+        <activity
+            android:name=".ActivityForResult"
+            android:launchMode="standard"
+            android:exported="true">
+            <!--指定该Activity是程序的入口-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--定义其他Activity-->
+        <activity android:name=".ExpandableListActivityTest" android:label="查看星际兵种">
+
+        </activity>
+        <activity android:name=".PreferenceActivityTest" android:label="设置程序参数">
+
+        </activity>
+
+        <activity android:name=".SecondActivity"/>
+
+        <activity android:name=".ResultActivity"/>
+
+        <activity android:name=".SelectCityActivity"/>
+
+    </application>
+
+</manifest>

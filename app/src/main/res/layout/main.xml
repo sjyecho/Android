@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--定义一个线性布局容器-->
+<!--
+    对于@+id/some_value: 如果R.java中没有some_value这个值, 则在R.java中生成一个some_value值; 如果有则直接使用已经存在的值.
+    对于@id/some_value: 如果R.java中存在some_value这个值, 则使用此值; 否则会造成编译错误.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="bottom|center_horizontal"
+    >
+
+    <!--
+    android:text="@string/bn1"
+    这句话指的是这个控件的文本值是bn1变量的值
+    string指的是res->values->strings这个位置
+    需如此标记 : <string name="bn1">bn1</string>
+    -->
+    <Button
+        android:id="@+id/bn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bn1"/>
+
+    <Button
+        android:id="@+id/bn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bn2"/>
+
+    <Button
+        android:id="@+id/bn3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bn3"/>
+
+    <Button
+        android:id="@+id/bn4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bn4"/>
+
+    <Button
+        android:id="@+id/bn5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bn5"/>
+
+</LinearLayout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--按钮、圆形按钮、带文字的图片按钮-->
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TableRow>
+        <!--普通文字按钮-->
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#5F9EA0"
+            android:text="普通按钮"
+            android:textSize="10pt"/>
+        <!--普通图片按钮-->
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_launcher_foreground"
+            android:background="#000000"/>
+    </TableRow>
+
+    <TableRow>
+        <!--按下时显示不同图片的按钮-->
+        <!--使用ImageButton来创建图片按钮，则不能显示文字-->
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/button_selector"
+            android:background="@drawable/ic_launcher_foreground"/>
+
+        <!--带文字的图片按钮-->
+        <!--此按钮的背景图片会缩放-->
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_selector"
+            android:text="带文字的图片按钮"/>
+    </TableRow>
+
+</TableLayout>

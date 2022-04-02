@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <!--定义该组件位于父容器中间-->
+    <TextView
+        android:id="@+id/View01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_launcher_background"
+        android:layout_centerInParent="true"/>
+
+    <!--定义该组件位于View01组件的上方-->
+    <TextView
+        android:id="@+id/View02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_launcher_background"
+        android:layout_above="@+id/View01"
+        android:layout_alignLeft="@+id/View01"/><!--控制该子组件位于给出ID组件的左边界对齐-->
+
+    <!--定义该组件位于View01组件的下方-->
+    <TextView
+        android:id="@+id/View03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_launcher_background"
+        android:layout_below="@+id/View01"
+        android:layout_alignLeft="@id/View01"/>
+
+    <!--定义该组件位于View01组件的左方-->
+    <TextView
+        android:id="@+id/View04"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_launcher_background"
+        android:layout_toLeftOf="@id/View01"
+        android:layout_alignTop="@id/View01"/>
+
+    <!--定义该组件位于View01组件的右方-->
+    <TextView
+        android:id="@+id/View05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_launcher_background"
+        android:layout_toRightOf="@id/View01"
+        android:layout_alignTop="@id/View01"/>
+
+</RelativeLayout>
