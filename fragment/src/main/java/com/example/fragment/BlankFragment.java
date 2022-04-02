@@ -18,6 +18,21 @@ import android.widget.TextView;
  * onAttach方法:时Fragment和Activity建立关联时调用
  * onDestoryView方法:当Fragment中的布局被移除时调用
  * onDetach方法:是Fragment和Activity解除关联的时候调用
+ *
+ * Fragment生命周期:
+ *      onAttach
+ *      onCreate
+ *      onCreateView
+ *      onActivityCreated
+ *      onStart
+ *      onResume
+ *      (Fragment is active)
+ *      onPause
+ *      onStop
+ *      onDestoryView
+ *      onDestory
+ *      onDetach
+ *      (Fragment is destoryed)
  */
 public class BlankFragment extends Fragment {
 
