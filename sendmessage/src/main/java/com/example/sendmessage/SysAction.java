@@ -68,7 +68,7 @@ public class SysAction extends Activity {
                         phone.setText(phoneNumber);
                     }
                     //关闭游标
-                    //cursor.close();
+                    cursor.close();
                 }
                 break;
         }
