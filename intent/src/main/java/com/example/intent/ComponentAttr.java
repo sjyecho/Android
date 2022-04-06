@@ -21,6 +21,7 @@ public class ComponentAttr extends Activity {
                 //创建一个ComponentName对象
                 ComponentName comp=new ComponentName(ComponentAttr.this,SecondActivity.class);
                 Intent intent=new Intent();
+                intent.setAction("123");
                 intent.setComponent(comp);
                 startActivity(intent);
             }

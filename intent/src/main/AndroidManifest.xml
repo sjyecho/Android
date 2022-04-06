@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Demo01">
         <activity
-            android:name=".DataAttr"
+            android:name=".ComponentAttr"
             android:exported="true">
             <intent-filter>
                 <!--决定应用的入口Activity,也就是我们启动应用时首先显示哪一个Activity-->
