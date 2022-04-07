@@ -55,6 +55,20 @@
         <entry key="kaohedemo/src/main/res/layout/activityone.xml" value="0.32083333333333336" />
         <entry key="kaohedemo/src/main/res/layout/activitythree.xml" value="0.32083333333333336" />
         <entry key="kaohedemo/src/main/res/layout/activitytwo.xml" value="0.3223958333333333" />
+        <entry key="layout/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1415" />
+        <entry key="layout/src/main/res/drawable/ic_launcher_background.xml" value="0.1415" />
+        <entry key="layout/src/main/res/layout/absolutelayout.xml" value="0.2246376811594203" />
+        <entry key="layout/src/main/res/layout/activity_main.xml" value="0.2246376811594203" />
+        <entry key="layout/src/main/res/layout/clock.xml" value="0.2246376811594203" />
+        <entry key="layout/src/main/res/layout/framelayout.xml" value="0.2246376811594203" />
+        <entry key="layout/src/main/res/layout/imageview.xml" value="0.2246376811594203" />
+        <entry key="layout/src/main/res/layout/linearlayout.xml" value="0.2246376811594203" />
+        <entry key="layout/src/main/res/layout/relativelayout.xml" value="0.2246376811594203" />
+        <entry key="layout/src/main/res/layout/tablelayout.xml" value="0.2246376811594203" />
+        <entry key="layout/src/main/res/layout/togglebutton.xml" value="0.2246376811594203" />
+        <entry key="resources1/src/main/res/drawable/my_image.xml" value="0.236" />
+        <entry key="resources1/src/main/res/layout/activity_main.xml" value="0.3223958333333333" />
+        <entry key="resources1/src/main/res/layout/demo01.xml" value="0.20923913043478262" />
         <entry key="sendmessage/src/main/res/layout/main.xml" value="0.16168478260869565" />
       </map>
     </option>

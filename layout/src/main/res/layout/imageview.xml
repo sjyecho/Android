@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/plus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="增大透明度"/>
+        <Button
+            android:id="@+id/minus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="降低透明度"/>
+        <Button
+            android:id="@+id/next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="下一张"/>
+    </LinearLayout>
+
+    <!--定义显示图片整体的ImageView-->
+    <!--android:scaleType="fitCenter" 表明ImageView显示图片时会进行保持纵横比的缩放并将缩放后的图片放在ImageView的中央-->
+    <!--android:adjustViewBounds 设置ImageView是否调整自己的边界来保持所显示图片的长宽比-->
+    <ImageView
+        android:adjustViewBounds="true"
+        android:id="@+id/image1"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="#0000ff"
+        android:layout_height="720px"
+        android:src="@drawable/img1"
+        android:scaleType="fitCenter"/>
+
+    <!--定义显示图片局部细节的ImageView-->
+    <ImageView
+        android:id="@+id/image2"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:background="#ffffff"
+        android:layout_marginTop="10dp"/><!--该组件距离上方的控件为10dp-->
+
+</LinearLayout>

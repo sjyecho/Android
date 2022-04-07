@@ -1,6 +1,5 @@
-package com.example.app3;
+package com.example.layout;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -14,72 +13,70 @@ import android.widget.ImageView;
 import androidx.annotation.Nullable;
 
 @SuppressWarnings("all")
-public class MainActivity9 extends Activity {
+public class DemoImageView extends Activity {
 
     //定义一个访问图片的数组
     int[] images = new int[]{
-            R.drawable.a,
-            R.drawable.b,
+            R.drawable.img1,
+            R.drawable.img2,
+            R.drawable.img3
     };
-
     //定义默认显示的图片
-    int currentImg = 1;
+    int currentImg = 0;
     //定义图片的初始透明度
     private int alpha = 255;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main9);
+        setContentView(R.layout.imageview);
+        Button plus = findViewById(R.id.plus);
+        Button minus = findViewById(R.id.minus);
+        Button next = findViewById(R.id.next);
+        ImageView image1 = findViewById(R.id.image1);
+        ImageView image2 = findViewById(R.id.image2);
 
-        final Button plus = (Button) findViewById(R.id.plus);
-        final Button minus = (Button) findViewById(R.id.minus);
-        final Button next = (Button) findViewById(R.id.next);
-        final ImageView image1 = (ImageView) findViewById(R.id.image1);
-        final ImageView image2 = (ImageView) findViewById(R.id.image2);
-
+        //定义查看下一张图片的监听器
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (currentImg >= 2) {
-                    currentImg = -1;
+                    currentImg = 0;
+                }else {
+                    currentImg++;
                 }
-                //getDrawable():返回视图的可绘制对象，如果未分配可绘制对象，则返回 null。
-                BitmapDrawable bitMapDrawable = (BitmapDrawable) image1.getDrawable();
+                BitmapDrawable bitmapDrawable = (BitmapDrawable) image1.getDrawable();
                 //如果图片还未回收，先强制回收该图片
-                if (!bitMapDrawable.getBitmap().isRecycled()) {
-                    bitMapDrawable.getBitmap().recycle();
+                if (!bitmapDrawable.getBitmap().isRecycled()) {
+                    bitmapDrawable.getBitmap().recycle();
                 }
                 //改变ImageView显示的图片
                 image1.setImageBitmap(BitmapFactory.decodeResource(getResources(), images[currentImg]));
             }
         });
-
         //定义改变图片透明度的方法
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                if (v == plus) {
+            public void onClick(View view) {
+                if (view == plus) {
                     alpha += 20;
                 }
-                if (v == minus) {
+                if (view == minus) {
                     alpha -= 20;
                 }
                 if (alpha >= 255) {
                     alpha = 255;
                 }
-                if (alpha < 0) {
+                if (alpha <= 0) {
                     alpha = 0;
                 }
-                //设置图片的透明度
+                //改变图片的透明度
                 image1.setAlpha(alpha);
             }
         };
-        //为扩大缩小两个按钮添加监听器
+        //为两个按钮添加监听器
         plus.setOnClickListener(listener);
         minus.setOnClickListener(listener);
-
         image1.setOnTouchListener(new View.OnTouchListener() {
             /*
                 @SuppressLint("ClickableViewAccessibility")
@@ -93,23 +90,22 @@ public class MainActivity9 extends Activity {
                 //获取第一个图片显示框中的位图
                 Bitmap bitmap = bitmapDrawable.getBitmap();
                 //bitmap图片实际大小与第一个ImageView的缩放比例
-                double scale=bitmap.getWidth()/320.0;
+                double scale = bitmap.getWidth() / 320.0;
                 //获取需要显示的图片的开始点
-                int x=(int)(motionEvent.getX()*scale);
-                int y=(int)(motionEvent.getY()*scale);
-                if(x+120>bitmap.getWidth()){
-                    x=bitmap.getWidth()-120;
+                int x = (int) (motionEvent.getX() * scale);
+                int y = (int) (motionEvent.getY() * scale);
+                if (x + 120 > bitmap.getWidth()) {
+                    x = bitmap.getWidth() - 120;
                 }
-                if (y+120>bitmap.getHeight()){
-                    y=bitmap.getHeight()-120;
+                if (y + 120 > bitmap.getHeight()) {
+                    y = bitmap.getHeight() - 120;
                 }
                 //显示图片的指定区域
                 //Bitmap是代表位图的类，调用它的createBitmap（）静态方法即可截取位图的指定部分--返回截取区域生成的新位图
-                image2.setImageBitmap(Bitmap.createBitmap(bitmap,x,y,120,120));
+                image2.setImageBitmap(Bitmap.createBitmap(bitmap, x, y, 120, 120));
                 image2.setAlpha(alpha);
-                return false;
+                return true;
             }
         });
-
     }
 }
