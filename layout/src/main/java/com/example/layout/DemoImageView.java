@@ -12,6 +12,10 @@ import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 
+/**
+ * 图像视图（ImageView）的功能和用法
+ * 图片浏览器：本例的图片浏览器可以改变所查看图片的透明度，可以查看图片的局部细节
+ */
 @SuppressWarnings("all")
 public class DemoImageView extends Activity {
 
@@ -104,7 +108,7 @@ public class DemoImageView extends Activity {
                 //Bitmap是代表位图的类，调用它的createBitmap（）静态方法即可截取位图的指定部分--返回截取区域生成的新位图
                 image2.setImageBitmap(Bitmap.createBitmap(bitmap, x, y, 120, 120));
                 image2.setAlpha(alpha);
-                return true;
+                return true;//return true则不响应单击事件
             }
         });
     }

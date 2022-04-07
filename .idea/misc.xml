@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../Android/Sdk/platforms/android-32/data/res/layout/simple_dropdown_item_1line.xml" value="0.182518115942029" />
         <entry key="../../Android/Sdk/platforms/android-32/data/res/layout/simple_list_item_1.xml" value="0.15678824721377912" />
         <entry key="activitys/src/main/res/drawable/p.xml" value="0.235" />
         <entry key="activitys/src/main/res/drawable/t.xml" value="0.235" />
@@ -59,6 +60,7 @@
         <entry key="layout/src/main/res/drawable/ic_launcher_background.xml" value="0.1415" />
         <entry key="layout/src/main/res/layout/absolutelayout.xml" value="0.2246376811594203" />
         <entry key="layout/src/main/res/layout/activity_main.xml" value="0.2246376811594203" />
+        <entry key="layout/src/main/res/layout/autocompletetextview.xml" value="0.182518115942029" />
         <entry key="layout/src/main/res/layout/clock.xml" value="0.2246376811594203" />
         <entry key="layout/src/main/res/layout/framelayout.xml" value="0.2246376811594203" />
         <entry key="layout/src/main/res/layout/imageview.xml" value="0.2246376811594203" />
