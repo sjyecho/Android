@@ -19,12 +19,12 @@ public class DemoChooseDateAndTime extends Activity {
     private int year;
     private int month;
     private int day;
-    //private int hour;
-    //private int minute;
+    private int hour;
+    private int minute;
 
-    private void showDate(int year, int month, int day) {
+    private void showDate(int year, int month, int day,int hour,int minute) {
         EditText show = findViewById(R.id.show_date);
-        show.setText("您选择的日期为：" + year + "年" + month + "月" + day + "日");
+        show.setText("您选择的日期为：" + year + "年" + month + "月" + day + "日"+hour+"时"+minute+"分");
     }
 
     @Override
@@ -32,14 +32,14 @@ public class DemoChooseDateAndTime extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dateandtime);
         DatePicker datePicker = findViewById(R.id.datepicker);
-        //TimePicker timePicker = findViewById(R.id.timepicker);
+        TimePicker timePicker = findViewById(R.id.timepicker);
         //获取当前的年月日、小时分钟
         Calendar c = Calendar.getInstance();
         year = c.get(Calendar.YEAR);
         month = c.get(Calendar.MONTH);
         day = c.get(Calendar.DAY_OF_MONTH);
-        //hour = c.get(Calendar.HOUR);
-        //minute = c.get(Calendar.MINUTE);
+        hour = c.get(Calendar.HOUR);
+        minute = c.get(Calendar.MINUTE);
 
         //初始化DatePicker组件，初始化时指定监听器
         datePicker.init(year, month, day, new DatePicker.OnDateChangedListener() {
@@ -49,13 +49,13 @@ public class DemoChooseDateAndTime extends Activity {
                 DemoChooseDateAndTime.this.month = month;
                 DemoChooseDateAndTime.this.day = day;
                 //显示当前日期、时间
-                //showDate(year, month, day, hour, minute);
-                showDate(year, month, day);
+                showDate(year, month, day, hour, minute);
+                //showDate(year, month, day);
             }
         });
 
         //为TimePicker指定监听器
-        /*timePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
+        timePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
             @Override
             public void onTimeChanged(TimePicker timePicker, int hour, int minute) {
                 DemoChooseDateAndTime.this.hour = hour;
@@ -63,6 +63,6 @@ public class DemoChooseDateAndTime extends Activity {
                 //显示当前日期、时间
                 showDate(year, month, day, hour, minute);
             }
-        });*/
+        });
     }
 }
