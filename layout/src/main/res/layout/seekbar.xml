@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="240px"
+        android:src="@drawable/img2"/>
+
+    <!--定义一个拖动条，并改变它的滑块外观-->
+    <!--
+        android:max ：定义该拖动条的最大值(255)
+        android:progress ：定义该拖动条的当前值(255)
+        android:thumb ：指定此属性改变拖动条上滑块的外观
+    -->
+    <SeekBar
+        android:id="@+id/seekbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="255"
+        android:progress="255"
+        android:thumb="@drawable/ic_launcher_foreground"/>
+
+    <!--
+        android:stepSize="0.5" 指定该星级评分条中星级的最小变化为0.5，也就是最少要变化半个星级
+    -->
+    <RatingBar
+        android:id="@+id/rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:max="255"
+        android:progress="255"
+        android:stepSize="0.5"/>
+
+</LinearLayout>

@@ -58,14 +58,20 @@
         <entry key="kaohedemo/src/main/res/layout/activitytwo.xml" value="0.3223958333333333" />
         <entry key="layout/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1415" />
         <entry key="layout/src/main/res/drawable/ic_launcher_background.xml" value="0.1415" />
+        <entry key="layout/src/main/res/drawable/my_bar.xml" value="0.24" />
         <entry key="layout/src/main/res/layout/absolutelayout.xml" value="0.2246376811594203" />
         <entry key="layout/src/main/res/layout/activity_main.xml" value="0.2246376811594203" />
         <entry key="layout/src/main/res/layout/autocompletetextview.xml" value="0.182518115942029" />
         <entry key="layout/src/main/res/layout/clock.xml" value="0.2246376811594203" />
+        <entry key="layout/src/main/res/layout/dateandtime.xml" value="0.2164855072463768" />
         <entry key="layout/src/main/res/layout/framelayout.xml" value="0.2246376811594203" />
         <entry key="layout/src/main/res/layout/imageview.xml" value="0.2246376811594203" />
         <entry key="layout/src/main/res/layout/linearlayout.xml" value="0.2246376811594203" />
+        <entry key="layout/src/main/res/layout/progressbar.xml" value="0.2164855072463768" />
+        <entry key="layout/src/main/res/layout/progressbar02.xml" value="0.2164855072463768" />
         <entry key="layout/src/main/res/layout/relativelayout.xml" value="0.2246376811594203" />
+        <entry key="layout/src/main/res/layout/seekbar.xml" value="0.2164855072463768" />
+        <entry key="layout/src/main/res/layout/spinner.xml" value="0.2164855072463768" />
         <entry key="layout/src/main/res/layout/tablelayout.xml" value="0.2246376811594203" />
         <entry key="layout/src/main/res/layout/togglebutton.xml" value="0.2246376811594203" />
         <entry key="resources1/src/main/res/drawable/my_image.xml" value="0.236" />
