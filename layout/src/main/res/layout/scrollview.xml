@@ -15,49 +15,48 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="123"
+                android:text="1231111111111111111"
                 android:textSize="100sp"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="123"
+                android:text="1231111111111111111"
                 android:textSize="100sp"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="123"
+                android:text="1231111111111111111"
                 android:textSize="100sp"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="123"
+                android:text="1231111111111111111"
                 android:textSize="100sp"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="123"
+                android:text="1231111111111111111"
                 android:textSize="100sp"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="123"
+                android:text="1231111111111111111"
                 android:textSize="100sp"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="123"
+                android:text="1231111111111111111"
                 android:textSize="100sp"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="123"
+                android:text="1231111111111111111"
                 android:textSize="100sp"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="123"
+                android:text="1231111111111111111"
                 android:textSize="100sp"/>
-
         </LinearLayout>
     </HorizontalScrollView>
 </ScrollView>

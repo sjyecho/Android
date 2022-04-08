@@ -23,6 +23,7 @@
         <entry key="app3/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.189" />
         <entry key="app3/src/main/res/drawable/button_selector.xml" value="0.189" />
         <entry key="app3/src/main/res/drawable/ic_launcher_background.xml" value="0.189" />
+        <entry key="app3/src/main/res/drawable/selector.xml" value="0.2395" />
         <entry key="app3/src/main/res/layout/activity_main.xml" value="0.15678824721377912" />
         <entry key="app3/src/main/res/layout/main.xml" value="0.1474164133738602" />
         <entry key="app3/src/main/res/layout/main10.xml" value="0.192481884057971" />
@@ -30,7 +31,7 @@
         <entry key="app3/src/main/res/layout/main2.xml" value="0.1474164133738602" />
         <entry key="app3/src/main/res/layout/main3.xml" value="0.1474164133738602" />
         <entry key="app3/src/main/res/layout/main4.xml" value="0.1474164133738602" />
-        <entry key="app3/src/main/res/layout/main5.xml" value="0.1474164133738602" />
+        <entry key="app3/src/main/res/layout/main5.xml" value="0.1" />
         <entry key="app3/src/main/res/layout/main6.xml" value="0.192481884057971" />
         <entry key="app3/src/main/res/layout/main7.xml" value="0.192481884057971" />
         <entry key="app3/src/main/res/layout/main8.xml" value="0.192481884057971" />
