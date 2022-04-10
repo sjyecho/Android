@@ -5,11 +5,12 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 
-public class DemoStateListDrawable extends Activity {
+public class DemoTheme extends Activity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.statelistdrawable);
+        setTheme(R.style.Theme);
+        setContentView(R.layout.demostyle);
     }
 }

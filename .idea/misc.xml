@@ -5,6 +5,18 @@
       <map>
         <entry key="../../Android/Sdk/platforms/android-32/data/res/layout/simple_dropdown_item_1line.xml" value="0.182518115942029" />
         <entry key="../../Android/Sdk/platforms/android-32/data/res/layout/simple_list_item_1.xml" value="0.15678824721377912" />
+        <entry key="..\:/AndroidStudioProjects/AndroidFromGit/activitys/src/main/res/layout/login.xml" value="0.2578125" />
+        <entry key="..\:/AndroidStudioProjects/AndroidFromGit/app3/src/main/res/layout/main.xml" value="0.2578125" />
+        <entry key="..\:/AndroidStudioProjects/AndroidFromGit/app3/src/main/res/layout/main2.xml" value="0.2578125" />
+        <entry key="..\:/AndroidStudioProjects/AndroidFromGit/application/src/main/res/layout/activity_main.xml" value="0.12537993920972645" />
+        <entry key="..\:/AndroidStudioProjects/AndroidFromGit/fragment/src/main/res/layout/fragment_blank.xml" value="0.12537993920972645" />
+        <entry key="..\:/AndroidStudioProjects/AndroidFromGit/fragment/src/main/res/layout/fragment_blank_example.xml" value="0.2578125" />
+        <entry key="..\:/AndroidStudioProjects/AndroidFromGit/layout/src/main/res/layout/listview.xml" value="0.12771739130434784" />
+        <entry key="..\:/AndroidStudioProjects/AndroidFromGit/layout/src/main/res/layout/seekbar.xml" value="0.12537993920972645" />
+        <entry key="..\:/AndroidStudioProjects/AndroidFromGit/resources1/src/main/res/drawable/window_border.xml" value="0.171" />
+        <entry key="..\:/AndroidStudioProjects/AndroidFromGit/resources1/src/main/res/layout/activity_main.xml" value="0.12537993920972645" />
+        <entry key="..\:/AndroidStudioProjects/AndroidFromGit/resources1/src/main/res/layout/demo01.xml" value="0.12537993920972645" />
+        <entry key="..\:/AndroidStudioProjects/AndroidFromGit/resources1/src/main/res/layout/demostyle.xml" value="0.12771739130434784" />
         <entry key="activitys/src/main/res/drawable/p.xml" value="0.235" />
         <entry key="activitys/src/main/res/drawable/t.xml" value="0.235" />
         <entry key="activitys/src/main/res/drawable/z.xml" value="0.235" />
