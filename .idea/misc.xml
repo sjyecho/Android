@@ -3,20 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.353125" />
         <entry key="../../Android/Sdk/platforms/android-32/data/res/layout/simple_dropdown_item_1line.xml" value="0.182518115942029" />
         <entry key="../../Android/Sdk/platforms/android-32/data/res/layout/simple_list_item_1.xml" value="0.15678824721377912" />
-        <entry key="..\:/AndroidStudioProjects/AndroidFromGit/activitys/src/main/res/layout/login.xml" value="0.2578125" />
-        <entry key="..\:/AndroidStudioProjects/AndroidFromGit/app3/src/main/res/layout/main.xml" value="0.2578125" />
-        <entry key="..\:/AndroidStudioProjects/AndroidFromGit/app3/src/main/res/layout/main2.xml" value="0.2578125" />
-        <entry key="..\:/AndroidStudioProjects/AndroidFromGit/application/src/main/res/layout/activity_main.xml" value="0.12537993920972645" />
-        <entry key="..\:/AndroidStudioProjects/AndroidFromGit/fragment/src/main/res/layout/fragment_blank.xml" value="0.12537993920972645" />
-        <entry key="..\:/AndroidStudioProjects/AndroidFromGit/fragment/src/main/res/layout/fragment_blank_example.xml" value="0.2578125" />
-        <entry key="..\:/AndroidStudioProjects/AndroidFromGit/layout/src/main/res/layout/listview.xml" value="0.12771739130434784" />
-        <entry key="..\:/AndroidStudioProjects/AndroidFromGit/layout/src/main/res/layout/seekbar.xml" value="0.12537993920972645" />
-        <entry key="..\:/AndroidStudioProjects/AndroidFromGit/resources1/src/main/res/drawable/window_border.xml" value="0.171" />
-        <entry key="..\:/AndroidStudioProjects/AndroidFromGit/resources1/src/main/res/layout/activity_main.xml" value="0.12537993920972645" />
-        <entry key="..\:/AndroidStudioProjects/AndroidFromGit/resources1/src/main/res/layout/demo01.xml" value="0.12537993920972645" />
-        <entry key="..\:/AndroidStudioProjects/AndroidFromGit/resources1/src/main/res/layout/demostyle.xml" value="0.12771739130434784" />
         <entry key="activitys/src/main/res/drawable/p.xml" value="0.235" />
         <entry key="activitys/src/main/res/drawable/t.xml" value="0.235" />
         <entry key="activitys/src/main/res/drawable/z.xml" value="0.235" />
@@ -69,6 +58,10 @@
         <entry key="kaohedemo/src/main/res/layout/activityone.xml" value="0.32083333333333336" />
         <entry key="kaohedemo/src/main/res/layout/activitythree.xml" value="0.32083333333333336" />
         <entry key="kaohedemo/src/main/res/layout/activitytwo.xml" value="0.3223958333333333" />
+        <entry key="kaohedemo2/src/main/res/drawable-v24/window_border.xml" value="0.2395" />
+        <entry key="kaohedemo2/src/main/res/layout/activity_main.xml" value="0.21557971014492755" />
+        <entry key="kaohedemo2/src/main/res/layout/demostyle.xml" value="0.21557971014492755" />
+        <entry key="kaohedemo2/src/main/res/layout/grad01.xml" value="0.32083333333333336" />
         <entry key="layout/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1415" />
         <entry key="layout/src/main/res/drawable/ic_launcher_background.xml" value="0.1415" />
         <entry key="layout/src/main/res/drawable/my_bar.xml" value="0.24" />
@@ -89,8 +82,13 @@
         <entry key="layout/src/main/res/layout/tablelayout.xml" value="0.2246376811594203" />
         <entry key="layout/src/main/res/layout/togglebutton.xml" value="0.2246376811594203" />
         <entry key="resources1/src/main/res/drawable/my_image.xml" value="0.236" />
-        <entry key="resources1/src/main/res/layout/activity_main.xml" value="0.3223958333333333" />
+        <entry key="resources1/src/main/res/drawable/window_border.xml" value="0.2395" />
+        <entry key="resources1/src/main/res/layout/activity_main.xml" value="0.20977011494252873" />
+        <entry key="resources1/src/main/res/layout/alphaimageview.xml" value="0.21557971014492755" />
         <entry key="resources1/src/main/res/layout/demo01.xml" value="0.20923913043478262" />
+        <entry key="resources1/src/main/res/layout/demoarrays.xml" value="0.21557971014492755" />
+        <entry key="resources1/src/main/res/layout/demostyle.xml" value="0.25" />
+        <entry key="resources1/src/main/res/layout/rawrestest.xml" value="0.21557971014492755" />
         <entry key="sendmessage/src/main/res/layout/main.xml" value="0.16168478260869565" />
       </map>
     </option>

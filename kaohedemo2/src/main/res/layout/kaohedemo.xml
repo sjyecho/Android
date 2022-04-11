@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TableRow>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/app_name"
+            android:textSize="@dimen/title_font_size"
+            android:textColor="@color/c1"/>
+    </TableRow>
+
+    <TableRow>
+        <GridView
+            android:id="@+id/grad01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:horizontalSpacing="@dimen/spacing"
+            android:numColumns="3"
+            android:verticalSpacing="@dimen/spacing" />
+    </TableRow>
+
+    <TableRow>
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/books" />
+    </TableRow>
+
+    <TableRow>
+        <Button
+            android:id="@+id/playRaw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="播放raw下的音乐"
+            style="@style/style2"/>
+    </TableRow>
+
+</TableLayout>

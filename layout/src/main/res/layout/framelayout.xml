@@ -60,5 +60,4 @@
         android:width="30px"
         android:height="50px"
         android:background="#330000"/>
-
 </FrameLayout>

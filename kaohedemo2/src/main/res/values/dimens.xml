@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--定义尺寸值资源-->
+<resources>
+    <dimen name="spacing">8dp</dimen>
+
+    <!--网格视图的尺寸-->
+    <dimen name="cell_width">60dp</dimen>
+    <dimen name="cell_height">66dp</dimen>
+
+    <!--标题的尺寸-->
+    <dimen name="title_font_size">22sp</dimen>
+</resources>

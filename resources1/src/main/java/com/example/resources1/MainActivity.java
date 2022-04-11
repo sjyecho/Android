@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public Object getItem(int position) {
                 //根据一个索引（位置）获得该位置的对象
+                //返回指定位置的文本
                 return getResources().getText(textIds[position]);
             }
 
@@ -76,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
-        GridView grid = (GridView) findViewById(R.id.grid01);
+        GridView grid = findViewById(R.id.grid01);
         //为GridView设置Adapter
         grid.setAdapter(ba);
     }
