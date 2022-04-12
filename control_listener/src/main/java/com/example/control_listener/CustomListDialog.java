@@ -17,6 +17,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * 使用AlertDialog创建自定义对话框
+ */
 public class CustomListDialog extends Activity {
 
     final int LIST_DIALOG=0x113;
@@ -24,6 +27,7 @@ public class CustomListDialog extends Activity {
     private String[] names={"神族","虫族","人族"};
     //定义三个列表项对应的图标
     private int[] imageIds={R.drawable.toux1,R.drawable.toux2,R.drawable.toux3};
+
     Button bn;
     TextView show;
 
