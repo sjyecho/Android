@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="books">
+        <item>高等数学</item>
+        <item>线性代数</item>
+        <item>数据结构</item>
+        <item>操作系统</item>
+        <item>概率统计</item>
+        <item>大数定律</item>
+    </string-array>
+</resources>
