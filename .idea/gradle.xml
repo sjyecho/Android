@@ -26,6 +26,7 @@
             <option value="$PROJECT_DIR$/layout" />
             <option value="$PROJECT_DIR$/resources1" />
             <option value="$PROJECT_DIR$/sendmessage" />
+            <option value="$PROJECT_DIR$/toolbar_actionbar" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
