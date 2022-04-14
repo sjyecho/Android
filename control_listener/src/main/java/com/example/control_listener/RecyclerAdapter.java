@@ -69,6 +69,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyHold
 
     /**
      * 作为主类的泛型
+     * 构造方法：接收由布局生成的子View，并加载子View中的控件
      */
     class MyHolder extends RecyclerView.ViewHolder {
 

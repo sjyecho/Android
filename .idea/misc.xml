@@ -63,6 +63,10 @@
         <entry key="control_listener/src/main/res/layout/simpleadapterforlistview.xml" value="0.21557971014492755" />
         <entry key="control_listener/src/main/res/layout/single_choice_dialog.xml" value="0.21557971014492755" />
         <entry key="control_listener/src/main/res/layout/spinnerdemo.xml" value="0.32083333333333336" />
+        <entry key="echo/src/main/res/layout/activity_main.xml" value="0.35190217391304346" />
+        <entry key="echo/src/main/res/layout/add_layout.xml" value="0.3328125" />
+        <entry key="echo/src/main/res/layout/item.xml" value="0.1" />
+        <entry key="echo/src/main/res/menu/menu.xml" value="0.25" />
         <entry key="firstexam/src/main/res/layout/activity_main.xml" value="0.22509057971014493" />
         <entry key="firstexam/src/main/res/layout/second_activity.xml" value="0.22509057971014493" />
         <entry key="fragment/src/main/res/layout/activity_main.xml" value="0.20380434782608695" />
@@ -85,6 +89,11 @@
         <entry key="kaohedemo2/src/main/res/layout/activity_main.xml" value="0.21557971014492755" />
         <entry key="kaohedemo2/src/main/res/layout/demostyle.xml" value="0.21557971014492755" />
         <entry key="kaohedemo2/src/main/res/layout/grad01.xml" value="0.32083333333333336" />
+        <entry key="kaohedemo3/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="kaohedemo3/src/main/res/layout/add_layout.xml" value="0.20244565217391305" />
+        <entry key="kaohedemo3/src/main/res/layout/item.xml" value="0.22" />
+        <entry key="kaohedemo3/src/main/res/menu/menu.xml" value="0.3466666666666667" />
+        <entry key="kaohedemo32/src/main/res/layout/activity_main.xml" value="0.18885869565217392" />
         <entry key="layout/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1415" />
         <entry key="layout/src/main/res/drawable/ic_launcher_background.xml" value="0.1415" />
         <entry key="layout/src/main/res/drawable/my_bar.xml" value="0.24" />
