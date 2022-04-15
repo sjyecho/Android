@@ -123,6 +123,9 @@
         <entry key="resources1/src/main/res/layout/demostyle.xml" value="0.25" />
         <entry key="resources1/src/main/res/layout/rawrestest.xml" value="0.21557971014492755" />
         <entry key="sendmessage/src/main/res/layout/main.xml" value="0.16168478260869565" />
+        <entry key="sqlite/src/main/res/layout/activity_main.xml" value="0.18958333333333333" />
+        <entry key="sqlite/src/main/res/layout/dict.xml" value="0.3328125" />
+        <entry key="sqlite/src/main/res/layout/line.xml" value="0.35052083333333334" />
         <entry key="toolbar_actionbar/src/main/res/layout/activity_main.xml" value="0.171225937183384" />
         <entry key="toolbar_actionbar/src/main/res/layout/toolbar_demo.xml" value="0.1" />
         <entry key="toolbar_actionbar/src/main/res/menu/menu.xml" value="0.33" />

@@ -117,13 +117,17 @@ public class ContentProviderTest extends Activity {
                 //创建一个ExpandableListAdapter对象
                 ExpandableListAdapter adapter=new BaseExpandableListAdapter() {
 
+                    /**
+                     * 分组个数
+                     * @return
+                     */
                     @Override
                     public int getGroupCount() {
                         return names.size();
                     }
 
                     /**
-                     *
+                     * 分组中子选项的个数
                      * @param i groupPosition
                      * @return
                      */
@@ -133,7 +137,7 @@ public class ContentProviderTest extends Activity {
                     }
 
                     /**
-                     * 获取指定组位置处的组数据
+                     * 获取指定分组数据
                      * @param i groupPosition
                      * @return
                      */
@@ -143,7 +147,7 @@ public class ContentProviderTest extends Activity {
                     }
 
                     /**
-                     * 获取指定组位置、指定子列表项处的子列表项数据
+                     * 获取指定组的指定子列表项处的子列表项数据
                      * @param i groupPosition
                      * @param i1 childPosition
                      * @return
@@ -154,7 +158,7 @@ public class ContentProviderTest extends Activity {
                     }
 
                     /**
-                     *
+                     * 获取指定分组的ID
                      * @param i groupPosition
                      * @return
                      */
@@ -164,7 +168,7 @@ public class ContentProviderTest extends Activity {
                     }
 
                     /**
-                     *
+                     * 获取指定组的指定子选项的ID
                      * @param i groupPosition
                      * @param i1 childPosition
                      * @return
@@ -174,13 +178,26 @@ public class ContentProviderTest extends Activity {
                         return i1;
                     }
 
+                    /**
+                     * 父组和子选项是否有稳定的ID,就是说底层数据的改变会不会影响到他们
+                     * @return
+                     */
                     @Override
                     public boolean hasStableIds() {
                         return true;
                     }
 
+                    private TextView getTextView(){
+                        AbsListView.LayoutParams lp=new AbsListView.LayoutParams(ViewGroup.LayoutParams.FILL_PARENT,64);
+                        TextView textView=new TextView(ContentProviderTest.this);
+                        textView.setLayoutParams(lp);
+                        textView.setGravity(Gravity.CENTER_VERTICAL|Gravity.CENTER);
+                        textView.setPadding(36,0,0,0);
+                        textView.setTextSize(20);
+                        return textView;
+                    }
                     /**
-                     * 该方法决定每个组选项的外观
+                     * 该方法决定每个组选项的外观(父布局)
                      * @param i groupPosition
                      * @param b isExpanded
                      * @param view convertView
@@ -191,20 +208,11 @@ public class ContentProviderTest extends Activity {
                     public View getGroupView(int i, boolean b, View view, ViewGroup viewGroup) {
                         TextView textView=getTextView();
                         textView.setText(getGroup(i).toString());
-                        return textView;
-                    }
-
-                    private TextView getTextView(){
-                        AbsListView.LayoutParams lp=new AbsListView.LayoutParams(ViewGroup.LayoutParams.FILL_PARENT,64);
-                        TextView textView=new TextView(ContentProviderTest.this);
-                        textView.setLayoutParams(lp);
-                        textView.setGravity(Gravity.CENTER_VERTICAL|Gravity.LEFT);
-                        textView.setPadding(36,0,0,0);
-                        textView.setTextSize(20);
+                        textView.setBackgroundColor(getResources().getColor(R.color.c2));
                         return textView;
                     }
                     /**
-                     * 该方法决定每个子选项的外观
+                     * 该方法决定每个子选项的外观(子布局)
                      * @param i groupPosition
                      * @param i1 childPosition
                      * @param b isLastChild
@@ -216,6 +224,7 @@ public class ContentProviderTest extends Activity {
                     public View getChildView(int i, int i1, boolean b, View view, ViewGroup viewGroup) {
                         TextView textView = getTextView();
                         textView.setText(getChild(i,i1).toString());
+                        textView.setBackgroundColor(getResources().getColor(R.color.c8));
                         return textView;
                     }
 
