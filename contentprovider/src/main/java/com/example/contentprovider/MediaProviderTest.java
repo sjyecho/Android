@@ -1,5 +1,6 @@
 package com.example.contentprovider;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -15,6 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@SuppressWarnings("all")
 public class MediaProviderTest extends Activity {
 
     @Override

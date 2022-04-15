@@ -3,6 +3,7 @@ package com.example.contentprovider;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.pm.PackageManager;
@@ -10,9 +11,16 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AbsListView;
+import android.widget.BaseExpandableListAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ExpandableListAdapter;
+import android.widget.ExpandableListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -21,6 +29,7 @@ import androidx.core.app.ActivityCompat;
 
 import java.util.ArrayList;
 
+@SuppressLint("Range")
 public class ContentProviderTest extends Activity {
 
     private final static int EXTERNAL_STORAGE_REQUEST_CODE = 1;
@@ -32,7 +41,7 @@ public class ContentProviderTest extends Activity {
         switch (requestCode) {
             case EXTERNAL_STORAGE_REQUEST_CODE:
                 //用户点击权限对话框,确认后,会回调到这里,进行操作
-                Toast.makeText(ContentProviderTest.this, "已完成授权,请再次添加", Toast.LENGTH_LONG).show();
+                Toast.makeText(ContentProviderTest.this, "已完成授权,请再次添加", Toast.LENGTH_SHORT).show();
                 break;
         }
     }
@@ -62,18 +71,22 @@ public class ContentProviderTest extends Activity {
                 //ContactsContract.Contacts.CONTENT_URI : 用于管理联系人的Uri
                 Cursor cursor = getContentResolver().query(ContactsContract.Contacts.CONTENT_URI, null, null, null, null);
                 //遍历查询结果,获取系统中的所有联系人
-                while (cursor.moveToFirst()) {
+                while (cursor.moveToNext()) {
                     //获取联系人ID
                     String contactId = cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts._ID));
                     //获取联系人的名字
                     String name = cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
                     names.add(name);
                     //使用ContentResolver查找联系人的电话号码
-                    Cursor phones = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null,
-                            ContactsContract.CommonDataKinds.Phone.CONTACT_ID + "=" + contactId, null, null);
+                    Cursor phones = getContentResolver().query(
+                            ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
+                            null,
+                            ContactsContract.CommonDataKinds.Phone.CONTACT_ID + "=" + contactId,
+                            null,
+                            null);
                     ArrayList<String> detail = new ArrayList<>();
                     //遍历查询结果,获取该联系人的多个电话号码
-                    while (phones.moveToFirst()) {
+                    while (phones.moveToNext()) {
                         //获取查询结果中电话号码列中的数据
                         String phoneNumber = phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
                         detail.add("电话号码:" + phoneNumber);
@@ -81,9 +94,13 @@ public class ContentProviderTest extends Activity {
                     phones.close();
 
                     //使用ContentResolver查找联系人的Email地址
-                    Cursor emails = getContentResolver().query(ContactsContract.CommonDataKinds.Email.CONTENT_URI, null,
-                            ContactsContract.CommonDataKinds.Email.CONTACT_ID + "=" + contactId, null, null);
-                    while (emails.moveToFirst()) {
+                    Cursor emails = getContentResolver().query(
+                            ContactsContract.CommonDataKinds.Email.CONTENT_URI,
+                            null,
+                            ContactsContract.CommonDataKinds.Email.CONTACT_ID + "=" + contactId,
+                            null,
+                            null);
+                    while (emails.moveToNext()) {
                         //获取查询结果中的Email地址列中的数据
                         String emailAddress = emails.getString(emails.getColumnIndex(ContactsContract.CommonDataKinds.Email.DATA));
                         detail.add("邮件地址:" + emailAddress);
@@ -94,7 +111,123 @@ public class ContentProviderTest extends Activity {
                 cursor.close();
 
                 //加载result.xml界面布局代表的视图
-                //getLayoutInflater().inflate(R.layout.result, null);
+                View resultDialog = getLayoutInflater().inflate(R.layout.result,null);
+                //获取resultDialog中ID为list的ExpandableListView
+                ExpandableListView list=resultDialog.findViewById(R.id.list);
+                //创建一个ExpandableListAdapter对象
+                ExpandableListAdapter adapter=new BaseExpandableListAdapter() {
+
+                    @Override
+                    public int getGroupCount() {
+                        return names.size();
+                    }
+
+                    /**
+                     *
+                     * @param i groupPosition
+                     * @return
+                     */
+                    @Override
+                    public int getChildrenCount(int i) {
+                        return details.get(i).size();
+                    }
+
+                    /**
+                     * 获取指定组位置处的组数据
+                     * @param i groupPosition
+                     * @return
+                     */
+                    @Override
+                    public Object getGroup(int i) {
+                        return names.get(i);
+                    }
+
+                    /**
+                     * 获取指定组位置、指定子列表项处的子列表项数据
+                     * @param i groupPosition
+                     * @param i1 childPosition
+                     * @return
+                     */
+                    @Override
+                    public Object getChild(int i, int i1) {
+                        return details.get(i).get(i1);
+                    }
+
+                    /**
+                     *
+                     * @param i groupPosition
+                     * @return
+                     */
+                    @Override
+                    public long getGroupId(int i) {
+                        return i;
+                    }
+
+                    /**
+                     *
+                     * @param i groupPosition
+                     * @param i1 childPosition
+                     * @return
+                     */
+                    @Override
+                    public long getChildId(int i, int i1) {
+                        return i1;
+                    }
+
+                    @Override
+                    public boolean hasStableIds() {
+                        return true;
+                    }
+
+                    /**
+                     * 该方法决定每个组选项的外观
+                     * @param i groupPosition
+                     * @param b isExpanded
+                     * @param view convertView
+                     * @param viewGroup parent
+                     * @return 每个组选项外观
+                     */
+                    @Override
+                    public View getGroupView(int i, boolean b, View view, ViewGroup viewGroup) {
+                        TextView textView=getTextView();
+                        textView.setText(getGroup(i).toString());
+                        return textView;
+                    }
+
+                    private TextView getTextView(){
+                        AbsListView.LayoutParams lp=new AbsListView.LayoutParams(ViewGroup.LayoutParams.FILL_PARENT,64);
+                        TextView textView=new TextView(ContentProviderTest.this);
+                        textView.setLayoutParams(lp);
+                        textView.setGravity(Gravity.CENTER_VERTICAL|Gravity.LEFT);
+                        textView.setPadding(36,0,0,0);
+                        textView.setTextSize(20);
+                        return textView;
+                    }
+                    /**
+                     * 该方法决定每个子选项的外观
+                     * @param i groupPosition
+                     * @param i1 childPosition
+                     * @param b isLastChild
+                     * @param view convertView
+                     * @param viewGroup parent
+                     * @return 每个子选项的外观
+                     */
+                    @Override
+                    public View getChildView(int i, int i1, boolean b, View view, ViewGroup viewGroup) {
+                        TextView textView = getTextView();
+                        textView.setText(getChild(i,i1).toString());
+                        return textView;
+                    }
+
+                    @Override
+                    public boolean isChildSelectable(int i, int i1) {
+                        return true;
+                    }
+                };
+                //为ExpandableListView设置Adapter对象
+                list.setAdapter(adapter);
+                //使用对话框来显示查询结果
+                new AlertDialog.Builder(ContentProviderTest.this).setView(resultDialog).setPositiveButton("确定",null).show();
             }
         });
 
@@ -146,7 +279,10 @@ public class ContentProviderTest extends Activity {
                         Toast是一个包含给用户快速显示消息的视图
                         当视图显示给用户时,为浮动视图,且不会获得焦点
                     */
-                    Toast.makeText(ContentProviderTest.this, "联系人数据添加成功", Toast.LENGTH_LONG).show();
+                    ((EditText) findViewById(R.id.name)).setText("");
+                    ((EditText) findViewById(R.id.phone)).setText("");
+                    ((EditText) findViewById(R.id.email)).setText("");
+                    Toast.makeText(ContentProviderTest.this, "联系人数据添加成功", Toast.LENGTH_SHORT).show();
                 }
             }
         });
