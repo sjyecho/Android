@@ -6,9 +6,6 @@
         <entry key="../../../../layout/custom_preview.xml" value="0.353125" />
         <entry key="../../Android/Sdk/platforms/android-32/data/res/layout/simple_dropdown_item_1line.xml" value="0.182518115942029" />
         <entry key="../../Android/Sdk/platforms/android-32/data/res/layout/simple_list_item_1.xml" value="0.15678824721377912" />
-        <entry key="..\:/AndroidStudioProjects/AndroidFromGit/control_listener/src/main/res/layout/simpleadapter_for_listview.xml" value="0.12537993920972645" />
-        <entry key="..\:/AndroidStudioProjects/AndroidFromGit/sqlite/src/main/res/layout/dict.xml" value="0.12537993920972645" />
-        <entry key="..\:/AndroidStudioProjects/AndroidFromGit/sqlite/src/main/res/layout/result_activity.xml" value="0.11828774062816616" />
         <entry key="activitys/src/main/res/drawable/p.xml" value="0.235" />
         <entry key="activitys/src/main/res/drawable/t.xml" value="0.235" />
         <entry key="activitys/src/main/res/drawable/z.xml" value="0.235" />
@@ -42,6 +39,9 @@
         <entry key="app3/src/main/res/layout/main9.xml" value="0.192481884057971" />
         <entry key="application/src/main/res/layout/activity_main.xml" value="0.3223958333333333" />
         <entry key="contentprovider/src/main/res/layout/contentprovidertest.xml" value="0.20380434782608695" />
+        <entry key="contentprovider/src/main/res/layout/dict.xml" value="0.15" />
+        <entry key="contentprovider/src/main/res/layout/dictresolver.xml" value="0.3328125" />
+        <entry key="contentprovider/src/main/res/layout/item.xml" value="0.35208333333333336" />
         <entry key="contentprovider/src/main/res/layout/mediaprovidertest.xml" value="0.20380434782608695" />
         <entry key="contentprovider/src/main/res/layout/result.xml" value="0.213768115942029" />
         <entry key="control_listener/src/main/res/layout/activity_main.xml" value="0.18795289855072464" />
@@ -128,7 +128,9 @@
         <entry key="sendmessage/src/main/res/layout/main.xml" value="0.16168478260869565" />
         <entry key="sqlite/src/main/res/layout/activity_main.xml" value="0.18958333333333333" />
         <entry key="sqlite/src/main/res/layout/dict.xml" value="0.3328125" />
+        <entry key="sqlite/src/main/res/layout/item.xml" value="0.17604166666666668" />
         <entry key="sqlite/src/main/res/layout/line.xml" value="0.35052083333333334" />
+        <entry key="sqlite/src/main/res/layout/result_activity.xml" value="0.2151268115942029" />
         <entry key="toolbar_actionbar/src/main/res/layout/activity_main.xml" value="0.171225937183384" />
         <entry key="toolbar_actionbar/src/main/res/layout/toolbar_demo.xml" value="0.1" />
         <entry key="toolbar_actionbar/src/main/res/menu/menu.xml" value="0.33" />

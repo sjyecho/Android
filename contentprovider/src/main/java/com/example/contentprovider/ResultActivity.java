@@ -1,4 +1,4 @@
-package com.example.sqlite;
+package com.example.contentprovider;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,8 +8,6 @@ import android.widget.SimpleAdapter;
 
 import androidx.annotation.Nullable;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
