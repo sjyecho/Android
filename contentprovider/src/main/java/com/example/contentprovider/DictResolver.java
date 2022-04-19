@@ -42,6 +42,7 @@ public class DictResolver extends Activity {
                 ContentValues values=new ContentValues();
                 values.put(Words.Word.WORD,word);
                 values.put(Words.Word.DETAIL,detail);
+//                contentResolver.insert(Words.Word.DICT_CONTENT_URI,values);
                 contentResolver.insert(Words.Word.DICT_CONTENT_URI,values);
                 //显示提示信息
                 Toast.makeText(DictResolver.this, "添加生词成功", Toast.LENGTH_SHORT).show();

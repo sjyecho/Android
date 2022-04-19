@@ -15,13 +15,13 @@ import androidx.annotation.Nullable;
 public class DictProvider extends ContentProvider {
 
     private static UriMatcher matcher = new UriMatcher(UriMatcher.NO_MATCH);
-    private static final int WORDS = 1;
+    private static final int WORDS = 3;
     private static final int WORD = 2;
     private MyDatabaseHelper dbOpenHelper;
 
     static {
         //为UriMatcher注册两个Uri
-        matcher.addURI(Words.AUTHORITY, "words", WORDS);
+        matcher.addURI(Words.AUTHORITY, "word", WORDS);
         matcher.addURI(Words.AUTHORITY, "word/#", WORD);
     }
 
@@ -29,6 +29,10 @@ public class DictProvider extends ContentProvider {
     @Override
     public boolean onCreate() {
         dbOpenHelper = new MyDatabaseHelper(getContext(), "myDict.db3", 1);
+        ContentValues values=new ContentValues();
+        values.put("word","haha");
+        values.put("detail","哈哈");
+        insert(Words.Word.DICT_CONTENT_URI,values);
         return true;
     }
 

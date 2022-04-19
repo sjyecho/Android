@@ -13,7 +13,7 @@ public final class Words {
         public static final String WORD="word";
         public static final String DETAIL="detail";
         //定义该Content提供服务的两个Uri
-        public static final Uri DICT_CONTENT_URI=Uri.parse("content://"+AUTHORITY+"/words");
-        public static final Uri WORD_CONTENT_URI=Uri.parse("content://"+AUTHORITY+"/word");
+        public static final Uri DICT_CONTENT_URI=Uri.parse("content://"+AUTHORITY+"/wordquery");
+        public static final Uri WORD_CONTENT_URI=Uri.parse("content://"+AUTHORITY+"/database/1");
     }
 }

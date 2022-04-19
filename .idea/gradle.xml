@@ -25,9 +25,11 @@
             <option value="$PROJECT_DIR$/kaohedemo2" />
             <option value="$PROJECT_DIR$/kaohedemo3" />
             <option value="$PROJECT_DIR$/kaohedemo4" />
+            <option value="$PROJECT_DIR$/kaohedemo_4_1" />
             <option value="$PROJECT_DIR$/layout" />
             <option value="$PROJECT_DIR$/resources1" />
             <option value="$PROJECT_DIR$/sendmessage" />
+            <option value="$PROJECT_DIR$/service" />
             <option value="$PROJECT_DIR$/sqlite" />
             <option value="$PROJECT_DIR$/toolbar_actionbar" />
           </set>

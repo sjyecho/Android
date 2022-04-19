@@ -44,6 +44,7 @@
         <entry key="contentprovider/src/main/res/layout/item.xml" value="0.35208333333333336" />
         <entry key="contentprovider/src/main/res/layout/mediaprovidertest.xml" value="0.20380434782608695" />
         <entry key="contentprovider/src/main/res/layout/result.xml" value="0.213768115942029" />
+        <entry key="contentprovider/src/main/res/layout/result_activity.xml" value="0.35208333333333336" />
         <entry key="control_listener/src/main/res/layout/activity_main.xml" value="0.18795289855072464" />
         <entry key="control_listener/src/main/res/layout/check_radio.xml" value="0.303125" />
         <entry key="control_listener/src/main/res/layout/custom_listdialog.xml" value="0.21557971014492755" />
@@ -98,6 +99,22 @@
         <entry key="kaohedemo3/src/main/res/layout/item.xml" value="0.22" />
         <entry key="kaohedemo3/src/main/res/menu/menu.xml" value="0.3466666666666667" />
         <entry key="kaohedemo32/src/main/res/layout/activity_main.xml" value="0.18885869565217392" />
+        <entry key="kaohedemo4/src/main/res/layout/activity_main.xml" value="0.21302083333333333" />
+        <entry key="kaohedemo4/src/main/res/layout/contentprovidertest.xml" value="0.20742753623188406" />
+        <entry key="kaohedemo4/src/main/res/layout/createlxr.xml" value="0.20742753623188406" />
+        <entry key="kaohedemo4/src/main/res/layout/fragment_bohao.xml" value="0.21302083333333333" />
+        <entry key="kaohedemo4/src/main/res/layout/fragment_contact.xml" value="0.21302083333333333" />
+        <entry key="kaohedemo4/src/main/res/layout/fragment_dongtai.xml" value="0.21302083333333333" />
+        <entry key="kaohedemo4/src/main/res/layout/fragment_lianxiren.xml" value="0.21302083333333333" />
+        <entry key="kaohedemo4/src/main/res/layout/fragment_message.xml" value="0.21302083333333333" />
+        <entry key="kaohedemo4/src/main/res/layout/fragment_tonghuajilu.xml" value="0.21302083333333333" />
+        <entry key="kaohedemo4/src/main/res/layout/main.xml" value="0.21302083333333333" />
+        <entry key="kaohedemo4/src/main/res/layout/result.xml" value="0.20742753623188406" />
+        <entry key="kaohedemo_4_1/src/main/res/layout/activity_main.xml" value="0.20742753623188406" />
+        <entry key="kaohedemo_4_1/src/main/res/layout/demoresolver.xml" value="0.1" />
+        <entry key="kaohedemo_4_1/src/main/res/layout/demoresolvertype.xml" value="0.25" />
+        <entry key="kaohedemo_4_1/src/main/res/layout/resultactivity.xml" value="0.35052083333333334" />
+        <entry key="kaohedemo_4_1/src/main/res/layout/update_layout.xml" value="0.30434782608695654" />
         <entry key="layout/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1415" />
         <entry key="layout/src/main/res/drawable/ic_launcher_background.xml" value="0.1415" />
         <entry key="layout/src/main/res/drawable/my_bar.xml" value="0.24" />
@@ -126,6 +143,7 @@
         <entry key="resources1/src/main/res/layout/demostyle.xml" value="0.25" />
         <entry key="resources1/src/main/res/layout/rawrestest.xml" value="0.21557971014492755" />
         <entry key="sendmessage/src/main/res/layout/main.xml" value="0.16168478260869565" />
+        <entry key="service/src/main/res/layout/activity_main.xml" value="0.23777173913043478" />
         <entry key="sqlite/src/main/res/layout/activity_main.xml" value="0.18958333333333333" />
         <entry key="sqlite/src/main/res/layout/dict.xml" value="0.3328125" />
         <entry key="sqlite/src/main/res/layout/item.xml" value="0.17604166666666668" />
