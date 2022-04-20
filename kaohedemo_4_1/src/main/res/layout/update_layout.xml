@@ -11,14 +11,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="书籍名称:"
+            android:text="联系人名称:"
             android:textSize="20sp" />
         <EditText
-            android:id="@+id/sjmc"
+            android:id="@+id/old_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:selectAllOnFocus="true"
-            android:hint="请填写书籍名称" />
+            android:hint="请填写联系人名称" />
     </TableRow>
 
     <TableRow
@@ -28,32 +28,32 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="入库时间:"
+            android:text="电话号码:"
             android:textSize="20sp" />
         <EditText
-            android:id="@+id/rksj"
+            android:id="@+id/old_phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="phone"
             android:selectAllOnFocus="true"
-            android:hint="请填写入库时间" />
+            android:hint="请填写电话号码" />
     </TableRow>
 
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="价格:"
-            android:textSize="20sp" />
-        <EditText
-            android:id="@+id/price"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="phone"
-            android:selectAllOnFocus="true"
-            android:hint="请填写价格" />
-    </TableRow>
+<!--    <TableRow-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal">-->
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="价格:"-->
+<!--            android:textSize="20sp" />-->
+<!--        <EditText-->
+<!--            android:id="@+id/price"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:inputType="phone"-->
+<!--            android:selectAllOnFocus="true"-->
+<!--            android:hint="请填写价格" />-->
+<!--    </TableRow>-->
 </TableLayout>

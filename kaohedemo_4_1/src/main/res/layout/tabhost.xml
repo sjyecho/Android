@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--定义第一个标签页的内容-->
+    <LinearLayout
+        android:id="@+id/tab01"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/dialfragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"/>
+
+    </LinearLayout>
+
+    <!--定义第二个标签页的内容-->
+    <LinearLayout
+        android:id="@+id/tab02"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/callrecordfragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3"/>
+    </LinearLayout>
+
+    <!--定义第三个标签页的内容-->
+    <LinearLayout
+        android:id="@+id/tab03"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/collectionfragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5"/>
+    </LinearLayout>
+
+    <!--定义第四个标签页的内容-->
+    <LinearLayout
+        android:id="@+id/tab04"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/contactsfragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5"/>
+    </LinearLayout>
+
+</TabHost>

@@ -8,24 +8,24 @@ public class StaticUri {
     public static final String AUTHORITY = "com.example.kaohedemo_4_1.contentprovider";
 
     public static final class TableColumns implements BaseColumns {
-        public static final String BOOK_ID = "_id";
-        public static final String BOOK_SJMC = "sjmc";
-        public static final String BOOK_RKSJ = "rksj";
-        public static final String BOOK_JG = "jg";
+        public static final String CONTACTS_ID = "_id";
+        public static final String CONTACTS_NAME = "name";
+        public static final String CONTACTS_PHONE = "phone";
+//        public static final String BOOK_JG = "jg";
 
-        public static final String TYPE_ID = "_id";
-        public static final String TYPE_SJMC = "sjmc";
-        public static final String TYPE_LBMC = "rksj";
+//        public static final String TYPE_ID = "_id";
+//        public static final String TYPE_SJMC = "sjmc";
+//        public static final String TYPE_LBMC = "rksj";
 
-        public static final Uri BOOK_QUERY = Uri.parse("content://" + AUTHORITY + "/bookquery");
-        public static final Uri BOOK_INSERT = Uri.parse("content://" + AUTHORITY + "/bookinsert");
-        public static final Uri BOOK_DELETE = Uri.parse("content://" + AUTHORITY + "/bookdelete");
-        public static final Uri BOOK_UPDATE = Uri.parse("content://" + AUTHORITY + "/bookupdate");
+        public static final Uri CONTACTS_QUERY = Uri.parse("content://" + AUTHORITY + "/query");
+        public static final Uri CONTACTS_INSERT = Uri.parse("content://" + AUTHORITY + "/insert");
+        public static final Uri CONTACTS_DELETE = Uri.parse("content://" + AUTHORITY + "/delete");
+        public static final Uri CONTACTS_UPDATE = Uri.parse("content://" + AUTHORITY + "/update");
 
-        public static final Uri TYPE_QUERY = Uri.parse("content://" + AUTHORITY + "typequery");
-        public static final Uri TYPE_INSERT = Uri.parse("content://" + AUTHORITY + "typeinsert");
-        public static final Uri TYPE_DELETE = Uri.parse("content://" + AUTHORITY + "typedelete");
-        public static final Uri TYPE_UPDATE = Uri.parse("content://" + AUTHORITY + "typeupdate");
+//        public static final Uri TYPE_QUERY = Uri.parse("content://" + AUTHORITY + "typequery");
+//        public static final Uri TYPE_INSERT = Uri.parse("content://" + AUTHORITY + "typeinsert");
+//        public static final Uri TYPE_DELETE = Uri.parse("content://" + AUTHORITY + "typedelete");
+//        public static final Uri TYPE_UPDATE = Uri.parse("content://" + AUTHORITY + "typeupdate");
 
     }
 }

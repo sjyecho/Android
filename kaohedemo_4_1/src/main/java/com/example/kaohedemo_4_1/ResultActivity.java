@@ -31,7 +31,13 @@ public class ResultActivity extends Activity {
         Intent intent = getIntent();
         Bundle data = intent.getExtras();
         List<Map<String, String>> list = (List<Map<String, String>>) data.getSerializable("data");
-        SimpleAdapter simpleAdapter = new SimpleAdapter(ResultActivity.this, list, R.layout.resultactivity, new String[]{"sjmc", "rksj","jg"}, new int[]{R.id.sjmc, R.id.rksj, R.id.price});
+        SimpleAdapter simpleAdapter = new SimpleAdapter(
+                ResultActivity.this,
+                list,
+                R.layout.item,
+                new String[]{"sjmc", "rksj","jg"},
+                new int[]{R.id.head, R.id.name, R.id.phone});
+
         listView.setAdapter(simpleAdapter);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         //单击条目进行修改或者删除
@@ -56,17 +62,17 @@ public class ResultActivity extends Activity {
                         String update_rksj = rksj.getText().toString();
                         String update_price = price.getText().toString();
                         ContentValues values = new ContentValues();
-                        values.put(StaticUri.TableColumns.BOOK_SJMC, update_sjmc);
-                        values.put(StaticUri.TableColumns.BOOK_RKSJ, update_rksj);
-                        values.put(StaticUri.TableColumns.BOOK_JG, update_price);
-                        contentResolver.update(StaticUri.TableColumns.BOOK_UPDATE, values,"sjmc=? and rksj=? and jg=?", new String[]{update_sjmc, update_rksj,update_price});
+                        values.put(StaticUri.TableColumns.CONTACTS_NAME, update_sjmc);
+                        values.put(StaticUri.TableColumns.CONTACTS_PHONE, update_rksj);
+                        //values.put(StaticUri.TableColumns.BOOK_JG, update_price);
+                        contentResolver.update(StaticUri.TableColumns.CONTACTS_UPDATE, values,"sjmc=? and rksj=? and jg=?", new String[]{update_sjmc, update_rksj,update_price});
                     }
                 });
                 builder.setNegativeButton("删除此数据", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         //删除操作
-                        contentResolver.delete(StaticUri.TableColumns.BOOK_DELETE, "sjmc=?",new String[]{delete_name});
+                        contentResolver.delete(StaticUri.TableColumns.CONTACTS_DELETE, "sjmc=?",new String[]{delete_name});
                         listView.notify();
                     }
                 });

@@ -4,26 +4,34 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_vertical|center_horizontal"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/sjcx"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="书籍查询"
-        android:textSize="20sp"
-        tools:layout_editor_absoluteX="120dp"
-        tools:layout_editor_absoluteY="233dp" />
+    <FrameLayout
+        android:id="@+id/container_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
 
-    <Button
-        android:id="@+id/lbcx"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="类别查询"
-        android:textSize="20sp"
-        tools:layout_editor_absoluteX="120dp"
-        tools:layout_editor_absoluteY="404dp" />
+<!--    <Button-->
+<!--        android:id="@+id/sjcx"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="书籍查询"-->
+<!--        android:textSize="20sp"-->
+<!--        tools:layout_editor_absoluteX="120dp"-->
+<!--        tools:layout_editor_absoluteY="233dp" />-->
 
+<!--    <Button-->
+<!--        android:id="@+id/lbcx"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="类别查询"-->
+<!--        android:textSize="20sp"-->
+<!--        tools:layout_editor_absoluteX="120dp"-->
+<!--        tools:layout_editor_absoluteY="404dp" />-->
+    <androidx.fragment.app.FragmentTabHost
+        android:id="@+id/tabhost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>

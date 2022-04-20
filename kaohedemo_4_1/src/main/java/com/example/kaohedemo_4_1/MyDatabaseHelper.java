@@ -8,8 +8,7 @@ import androidx.annotation.Nullable;
 
 public class MyDatabaseHelper extends SQLiteOpenHelper {
 
-    final String CREATE_BOOK_SQL = "create table book(_id integer primary key autoincrement,sjmc,rksj,jg)";
-    final String CREATE_TYPE_SQL = "create table type(_id integer primary key autoincrement,sjmc,lbmc)";
+    final String CREATE_CONTACTS_SQL = "create table contacts(_id integer primary key autoincrement,name,phone)";
 
     public MyDatabaseHelper(@Nullable Context context, @Nullable String name, int version) {
         super(context, name, null, version);
@@ -17,8 +16,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL(CREATE_BOOK_SQL);
-        sqLiteDatabase.execSQL(CREATE_TYPE_SQL);
+        sqLiteDatabase.execSQL(CREATE_CONTACTS_SQL);
     }
 
     @Override

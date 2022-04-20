@@ -1,6 +1,5 @@
 package com.example.kaohedemo_4_1;
 
-import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Intent;
@@ -39,12 +38,12 @@ public class DemoResolver extends AppCompatActivity {
             public void onClick(View view) {
                 String sjmc = ((EditText)findViewById(R.id.sjmc)).getText().toString();
                 String rksj = ((EditText)findViewById(R.id.rksj)).getText().toString();
-                String price = ((EditText)findViewById(R.id.price)).getText().toString();
+                //String price = ((EditText)findViewById(R.id.price)).getText().toString();
                 ContentValues values=new ContentValues();
-                values.put(StaticUri.TableColumns.BOOK_SJMC,sjmc);
-                values.put(StaticUri.TableColumns.BOOK_RKSJ,rksj);
-                values.put(StaticUri.TableColumns.BOOK_JG,price);
-                contentResolver.insert(StaticUri.TableColumns.BOOK_INSERT,values);
+                values.put(StaticUri.TableColumns.CONTACTS_NAME,sjmc);
+                values.put(StaticUri.TableColumns.CONTACTS_PHONE,rksj);
+                //values.put(StaticUri.TableColumns.BOOK_JG,price);
+                contentResolver.insert(StaticUri.TableColumns.CONTACTS_INSERT,values);
                 ((EditText)findViewById(R.id.sjmc)).setText("");
                 ((EditText)findViewById(R.id.rksj)).setText("");
                 ((EditText)findViewById(R.id.price)).setText("");
@@ -55,7 +54,7 @@ public class DemoResolver extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String key=((EditText) findViewById(R.id.key)).getText().toString();
-                Cursor cursor=contentResolver.query(StaticUri.TableColumns.BOOK_QUERY,null,"sjmc like ? or rksj like ?",new String[]{"%"+key+"%","%"+key+"%"},null);
+                Cursor cursor=contentResolver.query(StaticUri.TableColumns.CONTACTS_QUERY,null,"sjmc like ? or rksj like ?",new String[]{"%"+key+"%","%"+key+"%"},null);
                 Bundle data=new Bundle();
                 data.putSerializable("data",converCursorToList(cursor));
                 Intent intent = new Intent(DemoResolver.this,ResultActivity.class);
@@ -69,9 +68,9 @@ public class DemoResolver extends AppCompatActivity {
         ArrayList<Map<String,String>> result=new ArrayList<>();
         while (cursor.moveToNext()){
             Map<String,String> map=new HashMap<>();
-            map.put(StaticUri.TableColumns.BOOK_SJMC,cursor.getString(1));
-            map.put(StaticUri.TableColumns.BOOK_RKSJ,cursor.getString(2));
-            map.put(StaticUri.TableColumns.BOOK_JG,cursor.getString(3));
+            map.put(StaticUri.TableColumns.CONTACTS_NAME,cursor.getString(1));
+            map.put(StaticUri.TableColumns.CONTACTS_PHONE,cursor.getString(2));
+            //map.put(StaticUri.TableColumns.BOOK_JG,cursor.getString(3));
             result.add(map);
         }
         return result;

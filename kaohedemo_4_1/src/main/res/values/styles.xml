@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="style1">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/c1</item>
+    </style>
+
+    <style name="style2" parent="@style/style1">
+        <item name="android:padding">8dp</item>
+        <item name="backgroundColor">@color/c2</item>
+        <item name="android:textColor">@color/c9</item>
+    </style>
+</resources>
