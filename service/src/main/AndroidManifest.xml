@@ -19,6 +19,16 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".BindActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <service
             android:name=".FirstService"
             android:exported="false">
@@ -26,6 +36,14 @@
                 <action android:name="com.example.service.FIRST_SERVICE"/>
             </intent-filter>
         </service>
+        <service
+            android:name=".BindService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.example.service.BIND_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:name=".MainIntentService"/>
     </application>
 
 </manifest>

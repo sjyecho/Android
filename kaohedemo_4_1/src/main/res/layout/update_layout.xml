@@ -39,6 +39,22 @@
             android:hint="请填写电话号码" />
     </TableRow>
 
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/set_music"
+            android:text="设定铃声"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/play_music"
+            android:text="播放铃声"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </TableRow>
+
 <!--    <TableRow-->
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="wrap_content"-->

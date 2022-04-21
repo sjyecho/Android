@@ -6,6 +6,12 @@ import android.os.IBinder;
 
 import androidx.annotation.Nullable;
 
+/**
+ *
+ * 通过startService()启动Service的生命周期
+ * onCreate() -> onStart() -> (Service运行中) -> (服务被通知停止) -> onDestroy()
+ *
+ */
 public class FirstService extends Service {
 
     /**
@@ -26,7 +32,7 @@ public class FirstService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        System.out.println("-----------Service is Created------------");
+        System.out.println("-----------FirstService is Created------------");
     }
 
     /**
@@ -38,7 +44,13 @@ public class FirstService extends Service {
      */
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        System.out.println("-----------Service is Started------------");
+        System.out.println("-----------FirstService is Started------------");
+        System.out.println("----------Service当前线程为----------"+Thread.currentThread().getId());
+//        try {
+//            Thread.sleep(15000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
         return super.onStartCommand(intent, flags, startId);
     }
 
@@ -48,7 +60,7 @@ public class FirstService extends Service {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        System.out.println("-----------Service is Destoryed------------");
+        System.out.println("-----------FirstService is Destoryed,销毁线程为------------"+Thread.currentThread().getId());
 
     }
 }

@@ -50,7 +50,8 @@ public class RawResTest extends Activity {
         playAsset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mediaPlayer2.start();
+                mediaPlayer1.pause();
+                //mediaPlayer2.start();
             }
         });
     }

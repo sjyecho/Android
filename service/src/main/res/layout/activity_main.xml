@@ -8,13 +8,19 @@
 
     <Button
         android:id="@+id/start"
-        android:text="启动"
+        android:text="启动Service"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
     <Button
         android:id="@+id/stop"
-        android:text="停止"
+        android:text="停止Service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/start_intentService"
+        android:text="启动IntentService"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 </LinearLayout>
