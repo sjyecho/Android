@@ -9,6 +9,7 @@ public class MySecondReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         //int new_id = intent.getIntExtra("new_id",1);
         Intent intentToContacts=new Intent(context,New_Contacts.class);
+        //intentToContacts.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intentToContacts);
     }
 }

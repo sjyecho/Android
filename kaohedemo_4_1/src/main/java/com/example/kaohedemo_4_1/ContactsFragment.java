@@ -68,9 +68,8 @@ public class ContactsFragment extends Fragment {
                 builder.setTitle("联系人信息");
 
                 int viewIndex = listView.indexOfChild(view);
-                String index = String.valueOf(viewIndex);
+                //String index = String.valueOf(viewIndex);
                 //System.out.println(index + "-------------------------------------------");
-
 
                 EditText nameText = (EditText) updateForm.findViewById(R.id.old_name);
                 EditText phoneText = (EditText) updateForm.findViewById(R.id.old_phone);
@@ -80,7 +79,6 @@ public class ContactsFragment extends Fragment {
 
                 phoneText.setText(phone_old);
                 nameText.setText(name_old);
-
 
                 builder.setPositiveButton("确认修改", new DialogInterface.OnClickListener() {
                     @Override
@@ -142,7 +140,6 @@ public class ContactsFragment extends Fragment {
                         });
                     }
                 });
-
 
                 builder2.setPositiveButton("确认添加", new DialogInterface.OnClickListener() {
                     @Override
