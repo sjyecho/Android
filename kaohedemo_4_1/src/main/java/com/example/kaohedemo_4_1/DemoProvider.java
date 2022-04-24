@@ -6,6 +6,7 @@ import android.content.UriMatcher;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
+import android.os.AsyncTask;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -34,8 +35,8 @@ public class DemoProvider extends ContentProvider {
         Cursor cursor=query(StaticUri.TableColumns.CONTACTS_QUERY, null, "name like ? or phone like ?", new String[]{"%%", "%%"}, null);
         if (!cursor.moveToNext()){
             ContentValues values = new ContentValues();
-            for (int i = 0; i < 2; i++) {
-                values.put(StaticUri.TableColumns.CONTACTS_NAME, "姓名" + i);
+            for (int i = 0; i < 50; i++) {
+                values.put(StaticUri.TableColumns.CONTACTS_NAME, "姓名" + (i+1));
                 values.put(StaticUri.TableColumns.CONTACTS_PHONE, "17792936031");
                 //valuesbook.put(StaticUri.TableColumns.BOOK_JG, "50" + i + "$");
                 insert(StaticUri.TableColumns.CONTACTS_INSERT, values);
@@ -137,6 +138,5 @@ public class DemoProvider extends ContentProvider {
                 throw new IllegalArgumentException("未知Uri：" + uri);
         }
     }
-
 
 }

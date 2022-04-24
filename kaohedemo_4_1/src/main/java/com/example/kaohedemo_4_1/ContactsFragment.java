@@ -7,7 +7,9 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.media.MediaPlayer;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +20,7 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TableLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -27,28 +30,88 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+@SuppressWarnings("all")
 public class ContactsFragment extends Fragment {
 
+    String TAG = "ECHO.SJY";
     ContentResolver contentResolver;
     AlertDialog.Builder builder;
     AlertDialog.Builder builder2;
     AlertDialog.Builder builder3;
+    Cursor cursor = null;
+    ListView listView;
+    SimpleAdapter simpleAdapter = null;
+    MyAsyncTask myAsyncTask;
+
+
+    class MyAsyncTask extends AsyncTask<Cursor, Integer, SimpleAdapter> {
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            Log.d(TAG, "----------onPreExecute()方法执行----------");
+        }
+
+        @Override
+        protected SimpleAdapter doInBackground(Cursor... cursors) {
+            Log.d(TAG, "----------doInBackground()执行,对数据进行操作，初始化及封装----------");
+            ArrayList<Map<String, String>> list = converCursorToList(cursors[0]);
+            int count = 0;
+            publishProgress(count);
+            SimpleAdapter simpleAdapter = new SimpleAdapter(
+                    getContext(),
+                    list,
+                    R.layout.item,
+                    new String[]{"name", "phone"},
+                    new int[]{R.id.name, R.id.phone});
+            return simpleAdapter;
+        }
+
+        @Override
+        protected void onPostExecute(SimpleAdapter simpleAdapter) {
+            Log.d(TAG, "----------onPostExecute()执行,对UI进行操作，将数据添加至组件----------");
+            super.onPostExecute(simpleAdapter);
+            listView.setAdapter(simpleAdapter);
+        }
+
+        @Override
+        protected void onProgressUpdate(Integer... values) {
+            Log.d(TAG, "----------onProgressUpdate()执行,用于显示进度----------");
+            AlertDialog.Builder builder4 = new AlertDialog.Builder(getContext());
+            builder4.setTitle("正在进行数据初始化操作，请稍后......");
+            builder4.create().show();
+//            builder4.setPositiveButton("暂停加载数据", new DialogInterface.OnClickListener() {
+//                @Override
+//                public void onClick(DialogInterface dialogInterface, int i) {
+//                    myAsyncTask.cancel(true);
+//                }
+//            });
+            super.onProgressUpdate(values);
+        }
+
+        @Override
+        protected void onCancelled() {
+            Log.d(TAG, "----------onCancelled()执行----------");
+            super.onCancelled();
+        }
+    }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View contacts = inflater.inflate(R.layout.contacts_fragment, container, false);
         contentResolver = contacts.getContext().getContentResolver();
-        Cursor cursor = contentResolver.query(StaticUri.TableColumns.CONTACTS_QUERY, null, "name like ? or phone like ?", new String[]{"%%", "%%"}, null);
-        ArrayList<Map<String, String>> list = converCursorToList(cursor);
-        SimpleAdapter simpleAdapter = new SimpleAdapter(
-                getContext(),
-                list,
-                R.layout.item,
-                new String[]{"name", "phone"},
-                new int[]{R.id.name, R.id.phone});
-        ListView listView = contacts.findViewById(R.id.listviewfragment);
-        listView.setAdapter(simpleAdapter);
+        cursor = contentResolver.query(StaticUri.TableColumns.CONTACTS_QUERY, null, "name like ? or phone like ?", new String[]{"%%", "%%"}, null);
+        //        ArrayList<Map<String, String>> list = converCursorToList(cursor);
+//        SimpleAdapter simpleAdapter = new SimpleAdapter(
+//                getContext(),
+//                list,
+//                R.layout.item,
+//                new String[]{"name", "phone"},
+//                new int[]{R.id.name, R.id.phone});
+        listView = contacts.findViewById(R.id.listviewfragment);
+//        listView.setAdapter(simpleAdapter);
+        myAsyncTask = new MyAsyncTask();
+        myAsyncTask.execute(cursor);
 
         builder = new AlertDialog.Builder(getContext());
         builder2 = new AlertDialog.Builder(getContext());
@@ -59,9 +122,9 @@ public class ContactsFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-                Intent intent = new Intent(getContext(), MyFirstReceiver.class);
-                intent.putExtra("id", "1");
-                getActivity().sendBroadcast(intent);
+//                Intent intent = new Intent(getContext(), MyFirstReceiver.class);
+//                intent.putExtra("id", "1");
+//                getActivity().sendBroadcast(intent);
 
                 TableLayout updateForm = (TableLayout) getLayoutInflater().inflate(R.layout.update_layout, null);
                 builder.setView(updateForm);
@@ -104,9 +167,9 @@ public class ContactsFragment extends Fragment {
                         listView.setAdapter(simpleAdapter);
                     }
                 });
-                simpleAdapter.notifyDataSetChanged();
-                listView.setAdapter(simpleAdapter);
-                //builder.create().show();
+                //simpleAdapter.notifyDataSetChanged();
+                //listView.setAdapter(simpleAdapter);
+                builder.create().show();
             }
         });
 
@@ -121,7 +184,7 @@ public class ContactsFragment extends Fragment {
                 play_music.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        MediaPlayer mediaPlayer= MediaPlayer.create(getContext(),R.raw.bomb);
+                        MediaPlayer mediaPlayer = MediaPlayer.create(getContext(), R.raw.bomb);
                         mediaPlayer.start();
 
                     }

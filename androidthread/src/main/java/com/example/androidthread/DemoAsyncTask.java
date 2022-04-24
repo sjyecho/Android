@@ -14,6 +14,7 @@ import android.os.AsyncTask;
  * 参数3：Result，当任务执行完毕后，如果需要对结果进行返回，则使用这里指定的泛型作为返回值类型
  *          这里指定为Boolean，则表示使用Boolean型数据来反馈执行结果
  */
+@SuppressWarnings("all")
 public class DemoAsyncTask extends AsyncTask<Void, Integer, Boolean> {
 
 
