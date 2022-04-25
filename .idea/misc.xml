@@ -6,6 +6,8 @@
         <entry key="../../../../layout/custom_preview.xml" value="0.353125" />
         <entry key="../../Android/Sdk/platforms/android-32/data/res/layout/simple_dropdown_item_1line.xml" value="0.182518115942029" />
         <entry key="../../Android/Sdk/platforms/android-32/data/res/layout/simple_list_item_1.xml" value="0.15678824721377912" />
+        <entry key="..\:/AndroidStudioProjects/AndroidFromGit/kaohedemo_4_1/src/main/res/layout/contacts_fragment.xml" value="0.2578125" />
+        <entry key="..\:/AndroidStudioProjects/AndroidFromGit/kaohedemo_4_1/src/main/res/layout/item.xml" value="0.10733695652173914" />
         <entry key="activitys/src/main/res/drawable/p.xml" value="0.235" />
         <entry key="activitys/src/main/res/drawable/t.xml" value="0.235" />
         <entry key="activitys/src/main/res/drawable/z.xml" value="0.235" />
@@ -121,12 +123,11 @@
         <entry key="kaohedemo_4_1/src/main/res/layout/build3.xml" value="0.22" />
         <entry key="kaohedemo_4_1/src/main/res/layout/call_record_fragment.xml" value="0.3328125" />
         <entry key="kaohedemo_4_1/src/main/res/layout/collection_contacts_fragment.xml" value="0.3328125" />
-        <entry key="kaohedemo_4_1/src/main/res/layout/contacts_fragment.xml" value="0.1" />
+        <entry key="kaohedemo_4_1/src/main/res/layout/contacts_fragment.xml" value="0.3328125" />
         <entry key="kaohedemo_4_1/src/main/res/layout/demoresolver.xml" value="0.1" />
         <entry key="kaohedemo_4_1/src/main/res/layout/demoresolvertype.xml" value="0.25" />
         <entry key="kaohedemo_4_1/src/main/res/layout/dial_fragment.xml" value="0.3328125" />
-        <entry key="kaohedemo_4_1/src/main/res/layout/item.xml" value="0.33" />
-        <entry key="kaohedemo_4_1/src/main/res/layout/item1.xml" value="0.171225937183384" />
+        <entry key="kaohedemo_4_1/src/main/res/layout/item.xml" value="0.1" />
         <entry key="kaohedemo_4_1/src/main/res/layout/new_contacts.xml" value="0.259963768115942" />
         <entry key="kaohedemo_4_1/src/main/res/layout/resultactivity.xml" value="0.35052083333333334" />
         <entry key="kaohedemo_4_1/src/main/res/layout/tab_item_view.xml" value="0.1" />
@@ -150,9 +151,6 @@
         <entry key="layout/src/main/res/layout/spinner.xml" value="0.2164855072463768" />
         <entry key="layout/src/main/res/layout/tablelayout.xml" value="0.2246376811594203" />
         <entry key="layout/src/main/res/layout/togglebutton.xml" value="0.2246376811594203" />
-        <entry key="notification/src/main/res/layout/activity_main.xml" value="0.35208333333333336" />
-        <entry key="notification/src/main/res/layout/otheractivity.xml" value="0.18659420289855072" />
-        <entry key="permission/src/main/res/layout/activity_main.xml" value="0.334375" />
         <entry key="resources1/src/main/res/drawable/my_image.xml" value="0.236" />
         <entry key="resources1/src/main/res/drawable/window_border.xml" value="0.2395" />
         <entry key="resources1/src/main/res/layout/activity_main.xml" value="0.20977011494252873" />

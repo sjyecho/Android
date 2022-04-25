@@ -22,15 +22,14 @@ public class DemoProvider extends ContentProvider {
         uriMatcher.addURI(StaticUri.AUTHORITY, "delete", 2);
         uriMatcher.addURI(StaticUri.AUTHORITY, "update", 3);
         uriMatcher.addURI(StaticUri.AUTHORITY, "insert", 4);
-        uriMatcher.addURI(StaticUri.AUTHORITY, "typequery", 5);
-        uriMatcher.addURI(StaticUri.AUTHORITY, "typedelete", 6);
-        uriMatcher.addURI(StaticUri.AUTHORITY, "typeupdate", 7);
-        uriMatcher.addURI(StaticUri.AUTHORITY, "typeinsert", 8);
+        uriMatcher.addURI(StaticUri.AUTHORITY, "collection_query", 5);
+        uriMatcher.addURI(StaticUri.AUTHORITY, "collection_delete", 6);
+        uriMatcher.addURI(StaticUri.AUTHORITY, "collection_update", 7);
+        uriMatcher.addURI(StaticUri.AUTHORITY, "collection_insert", 8);
     }
 
     @Override
     public boolean onCreate() {
-
         dbHelp = new MyDatabaseHelper(getContext(), "contacts.db3", 1);
         Cursor cursor=query(StaticUri.TableColumns.CONTACTS_QUERY, null, "name like ? or phone like ?", new String[]{"%%", "%%"}, null);
         if (!cursor.moveToNext()){
@@ -68,7 +67,7 @@ public class DemoProvider extends ContentProvider {
             case 4:
                 db.insert("contacts", StaticUri.TableColumns.CONTACTS_ID, contentValues);
             case 8:
-                //db2.insert("type", StaticUri.TableColumns.TYPE_ID, contentValues);
+                db.insert("collections", StaticUri.TableColumns.CONTACTS_ID, contentValues);
         }
 //        if (rowId>0){
 //            Uri tableUri = ContentUris.withAppendedId(uri, rowId);
@@ -89,6 +88,9 @@ public class DemoProvider extends ContentProvider {
             case 2:
                 num = db.delete("contacts", "name = ?",strings);
                 //System.out.println(strings[0]+"==========================================="+num);
+                break;
+            case 6:
+                num = db.delete("collections", "name = ?",strings);
                 break;
             default:
                 throw new IllegalArgumentException("未知Uri：" + uri);

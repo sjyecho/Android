@@ -14,7 +14,7 @@ public class CollectionContactsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View dial = inflater.inflate(R.layout.collection_contacts_fragment, container, false);
-        return dial;
+        View view = inflater.inflate(R.layout.collection_contacts_fragment, container, false);
+        return view;
     }
 }

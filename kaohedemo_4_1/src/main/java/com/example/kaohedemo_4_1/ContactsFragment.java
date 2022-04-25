@@ -5,6 +5,7 @@ import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.media.MediaPlayer;
 import android.os.AsyncTask;
@@ -14,8 +15,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TableLayout;
@@ -42,9 +45,10 @@ public class ContactsFragment extends Fragment {
     Cursor cursor = null;
     ListView listView;
     SimpleAdapter simpleAdapter = null;
-    MyAsyncTask myAsyncTask;
+    //MyAsyncTask myAsyncTask;
 
 
+    /*
     class MyAsyncTask extends AsyncTask<Cursor, Integer, SimpleAdapter> {
         @Override
         protected void onPreExecute() {
@@ -99,7 +103,7 @@ public class ContactsFragment extends Fragment {
             Log.d(TAG, "----------onCancelled()执行----------");
             super.onCancelled();
         }
-    }
+    }*/
 
     @Nullable
     @Override
@@ -107,37 +111,143 @@ public class ContactsFragment extends Fragment {
         View contacts = inflater.inflate(R.layout.contacts_fragment, container, false);
         contentResolver = contacts.getContext().getContentResolver();
         cursor = contentResolver.query(StaticUri.TableColumns.CONTACTS_QUERY, null, "name like ? or phone like ?", new String[]{"%%", "%%"}, null);
-        //        ArrayList<Map<String, String>> list = converCursorToList(cursor);
-//        SimpleAdapter simpleAdapter = new SimpleAdapter(
-//                getContext(),
-//                list,
-//                R.layout.item,
-//                new String[]{"name", "phone"},
-//                new int[]{R.id.name, R.id.phone});
+        ArrayList<Map<String, String>> list = converCursorToList(cursor);
+        SimpleAdapter simpleAdapter = new SimpleAdapter(
+                getContext(),
+                list,
+                R.layout.item,
+                new String[]{"name", "phone"},
+                new int[]{R.id.name, R.id.phone});
+
+        //创建一个BaseAdapter对象
+        BaseAdapter ba = new BaseAdapter() {
+            @Override
+            public int getCount() {
+                //要绑定的条目的数目
+                return list.size();
+            }
+
+            @Override
+            public Object getItem(int position) {
+                //根据一个索引（位置）获得该位置的对象
+                //返回指定位置的文本
+                //return getResources().getText(textIds[position]);
+                return list.get(position);
+            }
+
+            @Override
+            public long getItemId(int position) {
+                //获取条目的Id
+                return position;
+            }
+
+            /**
+             * 重写该方法，该方法返回的View将作为GridView的每个格子
+             * @param position
+             * @param view
+             * @param viewGroup
+             * @return
+             */
+            @Override
+            public View getView(int position, View view, ViewGroup viewGroup) {
+                LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.item, null);
+                TextView nameTextView = layout.findViewById(R.id.name);
+                TextView phoneTextView = layout.findViewById(R.id.phone);
+                nameTextView.setText(list.get(position).get("name"));
+                phoneTextView.setText(list.get(position).get("phone"));
+                Button contact_update_f = layout.findViewById(R.id.contact_update);
+                //修改联系人信息
+                contact_update_f.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        TableLayout updateForm = (TableLayout) getLayoutInflater().inflate(R.layout.update_layout, null);
+                        builder.setView(updateForm);
+                        builder.setTitle("联系人信息");
+
+                        EditText nameText = (EditText) updateForm.findViewById(R.id.old_name);
+                        EditText phoneText = (EditText) updateForm.findViewById(R.id.old_phone);
+
+//                        String name_old = ((TextView) view.findViewById(R.id.name)).getText().toString();//要显示的旧值
+//                        String phone_old = ((TextView) view.findViewById(R.id.phone)).getText().toString();//要显示的旧值
+
+                        String name_old = list.get(position).get("name");//要显示的旧值
+                        String phone_old = list.get(position).get("phone");//要显示的旧值
+
+                        phoneText.setText(phone_old);
+                        nameText.setText(name_old);
+
+                        builder.setPositiveButton("确认修改", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+
+                                ContentValues values = new ContentValues();
+
+                                String name_new = ((EditText) updateForm.findViewById(R.id.old_name)).getText().toString();
+                                String phone_new = ((EditText) updateForm.findViewById(R.id.old_phone)).getText().toString();
+
+                                values.put(StaticUri.TableColumns.CONTACTS_NAME, name_new);
+                                values.put(StaticUri.TableColumns.CONTACTS_PHONE, phone_new);
+
+                                contentResolver.update(StaticUri.TableColumns.CONTACTS_UPDATE, values, "name = ?", new String[]{name_old});
+                            }
+                        });
+                        builder.setNegativeButton("删除此联系人", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                String name_old = ((TextView) view.findViewById(R.id.name)).getText().toString();
+                                contentResolver.delete(StaticUri.TableColumns.CONTACTS_DELETE, "name = ?", new String[]{name_old});
+                                simpleAdapter.notifyDataSetChanged();
+                                listView.setAdapter(simpleAdapter);
+                            }
+                        });
+                        //simpleAdapter.notifyDataSetChanged();
+                        //listView.setAdapter(simpleAdapter);
+                        builder.create().show();
+
+                    }
+                });
+                Button contact_collect_f = layout.findViewById(R.id.contact_collect);
+                //收藏功能
+                contact_collect_f.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        contentResolver = contacts.getContext().getContentResolver();
+                        if (contact_collect_f.getText().equals("收藏")){
+                            //点击实现收藏
+                            contact_collect_f.setText("取消收藏");
+                            ContentValues values=new ContentValues();
+                            String name = list.get(position).get("name");
+                            String phone = list.get(position).get("phone");
+                            values.put(StaticUri.TableColumns.COLLECTIONS_NAME, name);
+                            values.put(StaticUri.TableColumns.COLLECTIONS_PHONE, phone);
+                            contentResolver.insert(StaticUri.TableColumns.COLLECTIONS_INSERT, values);
+                        }else {
+                            //点击实现取消收藏
+                            contact_collect_f.setText("收藏");
+                            ContentValues values=new ContentValues();
+                            String name = list.get(position).get("name");
+                            String phone = list.get(position).get("phone");
+                            values.put(StaticUri.TableColumns.COLLECTIONS_NAME, name);
+                            values.put(StaticUri.TableColumns.COLLECTIONS_PHONE, phone);
+                            contentResolver.delete(StaticUri.TableColumns.COLLECTIONS_DELETE, "name = ?", new String[]{name});
+                        }
+                    }
+                });
+                return layout;
+            }
+        };
         listView = contacts.findViewById(R.id.listviewfragment);
-//        listView.setAdapter(simpleAdapter);
+        listView.setAdapter(ba);
 
 
-
-        myAsyncTask = new MyAsyncTask();
-        myAsyncTask.execute(cursor);
+//        myAsyncTask = new MyAsyncTask();
+//        myAsyncTask.execute(cursor);
 
         builder = new AlertDialog.Builder(getContext());
         builder2 = new AlertDialog.Builder(getContext());
         builder3 = new AlertDialog.Builder(getContext());
 
-        (contacts.findViewById(R.id.contact_update_f)).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                AlertDialog.Builder builder9=new AlertDialog.Builder(getContext());
-                TableLayout insertForm = (TableLayout) getLayoutInflater().inflate(R.layout.update_layout, null);
-                builder9.setView(insertForm);
-                builder9.setTitle("新增联系人");
-                builder9.create().show();
-            }
-        });
 
-        /*
         //点击联系人Item，弹出修改界面
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -150,10 +260,6 @@ public class ContactsFragment extends Fragment {
                 TableLayout updateForm = (TableLayout) getLayoutInflater().inflate(R.layout.update_layout, null);
                 builder.setView(updateForm);
                 builder.setTitle("联系人信息");
-
-                int viewIndex = listView.indexOfChild(view);
-                //String index = String.valueOf(viewIndex);
-                //System.out.println(index + "-------------------------------------------");
 
                 EditText nameText = (EditText) updateForm.findViewById(R.id.old_name);
                 EditText phoneText = (EditText) updateForm.findViewById(R.id.old_phone);
@@ -248,24 +354,8 @@ public class ContactsFragment extends Fragment {
                 builder2.create().show();
                 return true;
             }
-        });*/
-        return contacts;
-    }
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        Button bn1=getActivity().findViewById(R.id.contact_update_f);
-        bn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                AlertDialog.Builder builder9=new AlertDialog.Builder(getContext());
-                TableLayout insertForm = (TableLayout) getLayoutInflater().inflate(R.layout.update_layout, null);
-                builder9.setView(insertForm);
-                builder9.setTitle("新增联系人");
-                builder9.create().show();
-            }
         });
+        return contacts;
     }
 
     private ArrayList<Map<String, String>> converCursorToList(Cursor cursor) {
