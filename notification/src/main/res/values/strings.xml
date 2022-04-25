@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">notification</string>
+    <string name="send">发送通知</string>
+    <string name="delete">取消通知</string>
+</resources>

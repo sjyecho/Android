@@ -4,6 +4,7 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
         <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -30,6 +31,8 @@
             <option value="$PROJECT_DIR$/kaohedemo5" />
             <option value="$PROJECT_DIR$/kaohedemo_4_1" />
             <option value="$PROJECT_DIR$/layout" />
+            <option value="$PROJECT_DIR$/notification" />
+            <option value="$PROJECT_DIR$/permission" />
             <option value="$PROJECT_DIR$/resources1" />
             <option value="$PROJECT_DIR$/sendmessage" />
             <option value="$PROJECT_DIR$/service" />
@@ -38,7 +41,6 @@
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
-        <option name="delegatedBuild" value="false"/>
       </GradleProjectSettings>
     </option>
   </component>

@@ -30,7 +30,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-@SuppressWarnings("all")
+
 public class ContactsFragment extends Fragment {
 
     String TAG = "ECHO.SJY";
@@ -38,6 +38,7 @@ public class ContactsFragment extends Fragment {
     AlertDialog.Builder builder;
     AlertDialog.Builder builder2;
     AlertDialog.Builder builder3;
+    AlertDialog.Builder builder4;
     Cursor cursor = null;
     ListView listView;
     SimpleAdapter simpleAdapter = null;
@@ -60,7 +61,7 @@ public class ContactsFragment extends Fragment {
             SimpleAdapter simpleAdapter = new SimpleAdapter(
                     getContext(),
                     list,
-                    R.layout.item,
+                    R.layout.contacts_fragment,
                     new String[]{"name", "phone"},
                     new int[]{R.id.name, R.id.phone});
             return simpleAdapter;
@@ -76,8 +77,13 @@ public class ContactsFragment extends Fragment {
         @Override
         protected void onProgressUpdate(Integer... values) {
             Log.d(TAG, "----------onProgressUpdate()执行,用于显示进度----------");
-            AlertDialog.Builder builder4 = new AlertDialog.Builder(getContext());
+            builder4 = new AlertDialog.Builder(getContext());
             builder4.setTitle("正在进行数据初始化操作，请稍后......");
+            builder4.setNegativeButton("确定", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                }
+            });
             builder4.create().show();
 //            builder4.setPositiveButton("暂停加载数据", new DialogInterface.OnClickListener() {
 //                @Override
@@ -110,6 +116,9 @@ public class ContactsFragment extends Fragment {
 //                new int[]{R.id.name, R.id.phone});
         listView = contacts.findViewById(R.id.listviewfragment);
 //        listView.setAdapter(simpleAdapter);
+
+
+
         myAsyncTask = new MyAsyncTask();
         myAsyncTask.execute(cursor);
 
@@ -117,6 +126,18 @@ public class ContactsFragment extends Fragment {
         builder2 = new AlertDialog.Builder(getContext());
         builder3 = new AlertDialog.Builder(getContext());
 
+        (contacts.findViewById(R.id.contact_update_f)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder builder9=new AlertDialog.Builder(getContext());
+                TableLayout insertForm = (TableLayout) getLayoutInflater().inflate(R.layout.update_layout, null);
+                builder9.setView(insertForm);
+                builder9.setTitle("新增联系人");
+                builder9.create().show();
+            }
+        });
+
+        /*
         //点击联系人Item，弹出修改界面
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -189,6 +210,7 @@ public class ContactsFragment extends Fragment {
 
                     }
                 });
+                //选择音乐功能
                 set_music.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -226,8 +248,24 @@ public class ContactsFragment extends Fragment {
                 builder2.create().show();
                 return true;
             }
-        });
+        });*/
         return contacts;
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        Button bn1=getActivity().findViewById(R.id.contact_update_f);
+        bn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder builder9=new AlertDialog.Builder(getContext());
+                TableLayout insertForm = (TableLayout) getLayoutInflater().inflate(R.layout.update_layout, null);
+                builder9.setView(insertForm);
+                builder9.setTitle("新增联系人");
+                builder9.create().show();
+            }
+        });
     }
 
     private ArrayList<Map<String, String>> converCursorToList(Cursor cursor) {
