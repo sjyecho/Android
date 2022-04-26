@@ -36,6 +36,7 @@ import java.util.Map;
 
 public class ContactsFragment extends Fragment {
 
+    private boolean status=false;
     String TAG = "ECHO.SJY";
     ContentResolver contentResolver;
     AlertDialog.Builder builder;
@@ -156,6 +157,8 @@ public class ContactsFragment extends Fragment {
                 nameTextView.setText(list.get(position).get("name"));
                 phoneTextView.setText(list.get(position).get("phone"));
                 Button contact_update_f = layout.findViewById(R.id.contact_update);
+                Button contact_collect_f = layout.findViewById(R.id.contact_collect);
+
                 //修改联系人信息
                 contact_update_f.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -206,7 +209,7 @@ public class ContactsFragment extends Fragment {
 
                     }
                 });
-                Button contact_collect_f = layout.findViewById(R.id.contact_collect);
+
                 //收藏功能
                 contact_collect_f.setOnClickListener(new View.OnClickListener() {
                     @Override

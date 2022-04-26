@@ -96,8 +96,6 @@ public class MainActivity extends AppCompatActivity {
             notificationManager.notify(NOTIFICATION_ID, notify);
         });
 
-        del.setOnClickListener(v -> {
-            notificationManager.cancel(NOTIFICATION_ID);
-        });
+        del.setOnClickListener(v -> notificationManager.cancel(NOTIFICATION_ID));
     }
 }

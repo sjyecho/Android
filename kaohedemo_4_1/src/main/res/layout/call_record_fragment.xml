@@ -4,11 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/callrecord_text"
+    <ListView
+        android:id="@+id/callrecord_listview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="111111111111"
-        android:textSize="20sp"/>
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>

@@ -53,6 +53,8 @@ public class DemoProvider extends ContentProvider {
         switch (uriMatcher.match(uri)) {
             case 1:
                 return db.query("contacts", strings, s, strings1, null, null, s1);
+            case 5:
+                return db.query("collections", strings, s, strings1, null, null, s1);
             default:
                 throw new IllegalArgumentException("未知Uri：" + uri);
         }
@@ -66,8 +68,10 @@ public class DemoProvider extends ContentProvider {
         switch (uriMatcher.match(uri)) {
             case 4:
                 db.insert("contacts", StaticUri.TableColumns.CONTACTS_ID, contentValues);
+                break;
             case 8:
-                db.insert("collections", StaticUri.TableColumns.CONTACTS_ID, contentValues);
+                db.insert("collections", StaticUri.TableColumns.COLLECTIONS_ID, contentValues);
+                break;
         }
 //        if (rowId>0){
 //            Uri tableUri = ContentUris.withAppendedId(uri, rowId);

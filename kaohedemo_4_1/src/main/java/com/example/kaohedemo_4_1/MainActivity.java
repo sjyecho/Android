@@ -1,7 +1,9 @@
 package com.example.kaohedemo_4_1;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
@@ -14,8 +16,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TabHost;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class MainActivity extends FragmentActivity {
+import java.util.List;
+
+public class MainActivity extends FragmentActivity implements IButton{
 
 //    DialFragment dialFragment=new DialFragment();//拨号
 //    ContactsFragment contactsFragment=new ContactsFragment();//联系人
@@ -31,6 +36,17 @@ public class MainActivity extends FragmentActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.inflateMenu(R.menu.menu);
+        toolbar.setTitle("联系人");
+        toolbar.setBackgroundColor(getResources().getColor(R.color.blue));
+        View add = findViewById(R.id.menu_add);
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this,"在此完成添加事件......",Toast.LENGTH_LONG).show();
+            }
+        });
         initView();
     }
 
@@ -54,6 +70,25 @@ public class MainActivity extends FragmentActivity {
         TextView textView=view.findViewById(R.id.tab_text);
         textView.setText(mTextArray[index]);
         return view;
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        List<Fragment> fragments=getSupportFragmentManager().getFragments();
+        if (fragments==null){
+            return;
+        }
+
+        for (Fragment fragment : fragments) {
+            fragment.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+    }
+
+    @Override
+    public void setOnBtClick(String text) {
+        CallRecordFragment callRecordFragment=new CallRecordFragment();
+        callRecordFragment.setValue(text);
     }
 
     //    @Override

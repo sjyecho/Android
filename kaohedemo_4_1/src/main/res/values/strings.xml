@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">电话</string>
+    <string name="delete_one_number"><![CDATA[<-]]></string>
 </resources>
