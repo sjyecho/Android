@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MultiWindow</string>
+    <string name="activity_one_text">11111</string>
+    <string name="activity_one_button_text">分屏打开另一个Activity</string>
+    <string name="activity_two_text">22222</string>
+    <string name="activity_3_check">查询是否支持多窗口模式</string>
+</resources>

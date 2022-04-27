@@ -153,6 +153,9 @@
         <entry key="layout/src/main/res/layout/spinner.xml" value="0.2164855072463768" />
         <entry key="layout/src/main/res/layout/tablelayout.xml" value="0.2246376811594203" />
         <entry key="layout/src/main/res/layout/togglebutton.xml" value="0.2246376811594203" />
+        <entry key="multiwindow/src/main/res/layout/activity_2_main.xml" value="0.21354166666666666" />
+        <entry key="multiwindow/src/main/res/layout/activity_3_main.xml" value="0.33" />
+        <entry key="multiwindow/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="notification/src/main/res/layout/activity_main.xml" value="0.35208333333333336" />
         <entry key="notification/src/main/res/layout/otheractivity.xml" value="0.18659420289855072" />
         <entry key="notificationtestdemo/src/main/res/layout/activity_main.xml" value="0.21354166666666666" />
