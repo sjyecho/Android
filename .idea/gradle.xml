@@ -12,6 +12,8 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/activitys" />
+            <option value="$PROJECT_DIR$/aidl" />
+            <option value="$PROJECT_DIR$/aidl_client" />
             <option value="$PROJECT_DIR$/androidthread" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/app1" />
@@ -23,6 +25,7 @@
             <option value="$PROJECT_DIR$/control_listener" />
             <option value="$PROJECT_DIR$/firstexam" />
             <option value="$PROJECT_DIR$/fragment" />
+            <option value="$PROJECT_DIR$/handler" />
             <option value="$PROJECT_DIR$/intent" />
             <option value="$PROJECT_DIR$/kaohedemo" />
             <option value="$PROJECT_DIR$/kaohedemo2" />
@@ -40,6 +43,7 @@
             <option value="$PROJECT_DIR$/sendmessage" />
             <option value="$PROJECT_DIR$/service" />
             <option value="$PROJECT_DIR$/sqlite" />
+            <option value="$PROJECT_DIR$/thread_to_thread" />
             <option value="$PROJECT_DIR$/toolbar_actionbar" />
           </set>
         </option>

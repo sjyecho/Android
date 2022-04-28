@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView text;
     Button changeText;
 
+    //在主线程中创建的
     private Handler handler = new Handler() {
         @Override
         public void handleMessage(@NonNull Message msg) {
