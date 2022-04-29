@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/textview_one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hello World"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/post_change_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="post改变文字" />
+
+            <EditText
+                android:id="@+id/textview_two"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hello World"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/send_change_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="send改变文字" />
+
+            <EditText
+                android:id="@+id/textview_three"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hello World"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/post_delay_change_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="postDelay延迟改变文字"
+                android:textAllCaps="false" />
+
+            <EditText
+                android:id="@+id/textview_four"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hello World"
+                android:textSize="30sp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:clickable="false"
+                android:text="postAtTime自动改变文字"
+                android:textAllCaps="false" />
+
+            <EditText
+                android:id="@+id/textview_five"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hello World"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/send_empty_change_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="sendEmpty改变文字"
+                android:textAllCaps="false" />
+
+            <EditText
+                android:id="@+id/textview_six"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hello World"
+                android:textSize="30sp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:clickable="false"
+                android:text="sendAtTime自动改变文字"
+                android:textAllCaps="false" />
+
+            <EditText
+                android:id="@+id/textview_seven"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hello World"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/send_delay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="sendDelay延迟改变文字"
+                android:textAllCaps="false" />
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

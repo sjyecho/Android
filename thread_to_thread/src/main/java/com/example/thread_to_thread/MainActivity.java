@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         new Thread(threadB).start();
     }
 
+    //接收并处理消息
     class ThreadA implements Runnable {
 
         private Handler mHandler;
@@ -60,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //发送消息
     class ThreadB implements Runnable {
         @Override
         public void run() {
