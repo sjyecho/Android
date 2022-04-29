@@ -103,7 +103,7 @@ public class ThreadDemo_One extends Activity implements View.OnClickListener {
         handler.postAtTime(new Runnable() {
             @Override
             public void run() {
-                editText_four.setText("hello,C");
+                editText_four.setText("hello C");
                 Log.d("ECHO", "postAtTime方法执行完毕：" + System.currentTimeMillis());
             }
         }, boot + 5000);
