@@ -3,6 +3,8 @@ pluginManagement {
         gradlePluginPortal()
         google()
         mavenCentral()
+        maven { url 'https://jitpack.io' }
+        maven { url "https://maven.aliyun.com/repository/public" }
     }
 }
 dependencyResolutionManagement {
@@ -10,6 +12,8 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven { url 'https://jitpack.io' }
+        maven { url "https://maven.aliyun.com/repository/public" }
     }
 }
 rootProject.name = "AndroidFromGit"
@@ -47,3 +51,5 @@ include ':aidl'
 include ':handler'
 include ':aidl_client'
 include ':thread_to_thread'
+include ':reflect'
+include ':annotation'

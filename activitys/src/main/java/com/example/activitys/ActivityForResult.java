@@ -9,6 +9,8 @@ import android.widget.EditText;
 
 import androidx.annotation.Nullable;
 
+import com.shuyu.gsyvideoplayer.utils.GSYVideoType;
+
 /**
  * 使用两个Activity
  * 从第二个Activity中选择信息,并返回给第一个Activity

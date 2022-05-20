@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$/aidl" />
             <option value="$PROJECT_DIR$/aidl_client" />
             <option value="$PROJECT_DIR$/androidthread" />
+            <option value="$PROJECT_DIR$/annotation" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/app1" />
             <option value="$PROJECT_DIR$/app2" />
@@ -39,6 +40,7 @@
             <option value="$PROJECT_DIR$/notificationtestdemo" />
             <option value="$PROJECT_DIR$/permission" />
             <option value="$PROJECT_DIR$/permissiontestdemo" />
+            <option value="$PROJECT_DIR$/reflect" />
             <option value="$PROJECT_DIR$/resources1" />
             <option value="$PROJECT_DIR$/sendmessage" />
             <option value="$PROJECT_DIR$/service" />
@@ -47,7 +49,6 @@
             <option value="$PROJECT_DIR$/toolbar_actionbar" />
           </set>
         </option>
-        <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
   </component>

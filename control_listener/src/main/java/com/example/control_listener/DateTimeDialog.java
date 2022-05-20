@@ -18,6 +18,8 @@ import java.util.Calendar;
 public class DateTimeDialog extends Activity {
 
     String result;
+    String result1;
+    String result2;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -26,39 +28,29 @@ public class DateTimeDialog extends Activity {
         Button dateBn = findViewById(R.id.dateBn);
         Button timeBn = findViewById(R.id.timeBn);
         //为"设置日期"按钮绑定监听器
-        dateBn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Calendar c = Calendar.getInstance();
-                //直接创建一个DatePickerDialog对话框实例，并将它显示出来
-                new DatePickerDialog(DateTimeDialog.this,
-                        //绑定监听器
-                        new DatePickerDialog.OnDateSetListener() {
-                            @Override
-                            public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-                                TextView show = findViewById(R.id.show);
-                                //show.setText("您选择了：" + i + "年" + i1 + "月" + i2 + "日");
-                                result = "您选择了：" + i + "年" + i1 + "月" + i2 + "日";
-                                show.setText("日期选择完毕，请继续选择时间");
-                            }
-                        }, c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_MONTH)).show();
-            }
+        dateBn.setOnClickListener(view -> {
+            Calendar c = Calendar.getInstance();
+            //直接创建一个DatePickerDialog对话框实例，并将它显示出来
+            new DatePickerDialog(DateTimeDialog.this,
+                    //绑定监听器
+                    (datePicker, i, i1, i2) -> {
+                        TextView show = findViewById(R.id.show);
+                        //show.setText("您选择了：" + i + "年" + i1 + "月" + i2 + "日");
+                        result1 = "您选择了：" + i + "年" + i1 + "月" + i2 + "日";
+                        show.setText("日期选择完毕，请继续选择时间");
+                    }, c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_MONTH)).show();
         });
         //为"设置时间"按钮绑定监听器
-        timeBn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Calendar c = Calendar.getInstance();
-                new TimePickerDialog(DateTimeDialog.this,
-                        new TimePickerDialog.OnTimeSetListener() {
-                            @Override
-                            public void onTimeSet(TimePicker timePicker, int i, int i1) {
-                                TextView show = findViewById(R.id.show);
-                                result = result + i + "时" + i1 + "分";
-                                show.setText(result);
-                            }
-                        }, c.get(Calendar.HOUR_OF_DAY), c.get(Calendar.MINUTE), true).show();
-            }
+        timeBn.setOnClickListener(view -> {
+            Calendar c = Calendar.getInstance();
+            new TimePickerDialog(DateTimeDialog.this,
+                    (timePicker, i, i1) -> {
+                        TextView show = findViewById(R.id.show);
+                        result2 = i + "时" + i1 + "分";
+                        result = result1 + result2;
+                        show.setText(result);
+                        //result = "";
+                    }, c.get(Calendar.HOUR_OF_DAY), c.get(Calendar.MINUTE), true).show();
         });
     }
 }

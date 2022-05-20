@@ -24,27 +24,20 @@ public class MainActivity extends AppCompatActivity {
         intent.setPackage(this.getPackageName());
         //为Intent设置Action属性
         intent.setAction("com.example.service.FIRST_SERVICE");
-        start.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                System.out.println("----------主线程为-----------"+Thread.currentThread().getId());
-                startService(intent);
-            }
+
+        start.setOnClickListener(view -> {
+            System.out.println("----------主线程为-----------"+Thread.currentThread().getId());
+            startService(intent);
         });
-        stop.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                stopService(intent);
-            }
-        });
+
+        stop.setOnClickListener(view -> stopService(intent));
+
         Button start_intent_service=findViewById(R.id.start_intentService);
-        start_intent_service.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                System.out.println("----------主线程为-----------"+Thread.currentThread().getId());
-                Intent intent=new Intent(MainActivity.this,MainIntentService.class);
-                startService(intent);
-            }
+
+        start_intent_service.setOnClickListener(view -> {
+            System.out.println("----------主线程为-----------"+Thread.currentThread().getId());
+            Intent intent1 =new Intent(MainActivity.this,MainIntentService.class);
+            startService(intent1);
         });
     }
 }

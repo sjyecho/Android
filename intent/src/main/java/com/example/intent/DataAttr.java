@@ -49,7 +49,6 @@ public class DataAttr extends Activity {
                     content://com.android.contacts/contacts/1
                     content:前缀：该前缀表明该数据类型为联系人信息
                     //com.android.contacts/contacts/1：该数据表明操作_id为1的联系人数据
-
                 */
                 String data="content://com.android.contacts/contacts/1";
                 Uri uri = Uri.parse(data);

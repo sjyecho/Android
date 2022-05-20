@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
                 .setContentIntent(pi)
                 .setWhen(System.currentTimeMillis())
                 .setPriority(NotificationCompat.PRIORITY_HIGH)//设置优先级
-                .setOngoing(true)//true:通知无法清楚；false：通知可以被清楚
+                .setOngoing(true)//true:通知无法清除；false：通知可以被清除
                 .setAutoCancel(true)//点击通知后，通知栏是否自动删除通知
                 .setTicker("111111111")
                 .build();

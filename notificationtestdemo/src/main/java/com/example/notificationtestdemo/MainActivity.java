@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 NotificationChannel channel_5 = new NotificationChannel(
                         "channel_5",
-                        "four",
+                        "five",
                         NotificationManager.IMPORTANCE_HIGH);
                 channel_5.enableVibration(true);
                 Notification notify=new NotificationCompat.Builder(MainActivity.this,id_five)

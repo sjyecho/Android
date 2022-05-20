@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.kaohedemo_4_1.IContacts;
 
+@SuppressWarnings("all")
 public class AIDLClient extends AppCompatActivity {
 
     private IContacts contactsService;
@@ -49,7 +50,7 @@ public class AIDLClient extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    number.setText(contactsService.getNumber(1)+"");
+                    number.setText(contactsService.getNumber(2)+"");
                     contact.setText(contactsService.getPerson()+"");
                 } catch (RemoteException e) {
                     e.printStackTrace();
