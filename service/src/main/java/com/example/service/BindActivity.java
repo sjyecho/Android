@@ -74,14 +74,23 @@ public class BindActivity extends Activity {
         unbind.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                unbindService(conn);
+                try {
+                    unbindService(conn);
+                } catch (Exception e) {
+                    Toast.makeText(BindActivity.this, "并未绑定Service", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
 
         getServiceStatus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(BindActivity.this, "Service的count值为：" + binder.getCount(), Toast.LENGTH_LONG).show();
+                try {
+                    Toast.makeText(BindActivity.this, "Service的count值为：" + binder.getCount(), Toast.LENGTH_SHORT).show();
+                } catch (Exception e) {
+                    Toast.makeText(BindActivity.this, "请先绑定Service", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

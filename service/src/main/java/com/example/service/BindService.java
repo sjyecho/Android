@@ -18,7 +18,7 @@ public class BindService extends Service {
     private int count;
     private boolean quit;
     //定义onBinder方法所返回的对象
-    private MyBinder binder = new MyBinder();
+    private final MyBinder binder = new MyBinder();
 
     //通过继承Binder来实现IBinder类
     public class MyBinder extends Binder {
