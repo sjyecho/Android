@@ -20,7 +20,7 @@ public class BindActivity extends Activity {
     BindService.MyBinder binder;//此对象实现通信
 
     //定义一个ServiceConnection对象
-    private ServiceConnection conn = new ServiceConnection() {
+    private final ServiceConnection conn = new ServiceConnection() {
 
         //当该Activity与Service连接成功时回调该方法
         @Override

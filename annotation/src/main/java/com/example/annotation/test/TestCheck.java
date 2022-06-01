@@ -12,7 +12,7 @@ import java.lang.reflect.Method;
  * 当主方法执行后,会自动的自行检测所有加注解的方法,判断方法是否有异常并记录到文件中
  *
  * @ClassName TestCheck
- * @Description TODO
+ * @Description TODO 使用注解测试简单的框架
  * @Auther Shui Junyang
  * @Date 2022/5/20 下午2:44
  * @Version 1.0

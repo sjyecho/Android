@@ -24,6 +24,7 @@
             <option value="$PROJECT_DIR$/broadcastreceiver" />
             <option value="$PROJECT_DIR$/contentprovider" />
             <option value="$PROJECT_DIR$/control_listener" />
+            <option value="$PROJECT_DIR$/factory" />
             <option value="$PROJECT_DIR$/firstexam" />
             <option value="$PROJECT_DIR$/fragment" />
             <option value="$PROJECT_DIR$/handler" />
@@ -40,8 +41,11 @@
             <option value="$PROJECT_DIR$/notificationtestdemo" />
             <option value="$PROJECT_DIR$/permission" />
             <option value="$PROJECT_DIR$/permissiontestdemo" />
+            <option value="$PROJECT_DIR$/proxy" />
+            <option value="$PROJECT_DIR$/reference" />
             <option value="$PROJECT_DIR$/reflect" />
             <option value="$PROJECT_DIR$/resources1" />
+            <option value="$PROJECT_DIR$/rxjava" />
             <option value="$PROJECT_DIR$/sendmessage" />
             <option value="$PROJECT_DIR$/service" />
             <option value="$PROJECT_DIR$/sqlite" />

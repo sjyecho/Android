@@ -71,7 +71,7 @@
         <entry key="control_listener/src/main/res/layout/recyclerdemo.xml" value="0.171225937183384" />
         <entry key="control_listener/src/main/res/layout/recyclerview_demo.xml" value="0.18885869565217392" />
         <entry key="control_listener/src/main/res/layout/recyclerview_demo2.xml" value="0.18885869565217392" />
-        <entry key="control_listener/src/main/res/layout/recyclerview_list.xml" value="0.1" />
+        <entry key="control_listener/src/main/res/layout/recyclerview_list.xml" value="0.5" />
         <entry key="control_listener/src/main/res/layout/recyclerview_main.xml" value="0.18885869565217392" />
         <entry key="control_listener/src/main/res/layout/seekbar_demo.xml" value="0.21557971014492755" />
         <entry key="control_listener/src/main/res/layout/simpleadapter_for_listview.xml" value="0.18" />
@@ -170,6 +170,7 @@
         <entry key="permissiontestdemo/src/main/res/layout/activity_main.xml" value="0.19583333333333333" />
         <entry key="permissiontestdemo/src/main/res/layout/item.xml" value="0.1" />
         <entry key="permissiontestdemo/src/main/res/layout/update_layout.xml" value="0.1" />
+        <entry key="reference/src/main/res/layout/activity_main.xml" value="0.3161231884057971" />
         <entry key="reflect/src/main/res/layout/activity_main.xml" value="0.175" />
         <entry key="resources1/src/main/res/drawable/my_image.xml" value="0.236" />
         <entry key="resources1/src/main/res/drawable/window_border.xml" value="0.2395" />
@@ -180,6 +181,7 @@
         <entry key="resources1/src/main/res/layout/demostyle.xml" value="0.25" />
         <entry key="resources1/src/main/res/layout/rawrestest.xml" value="0.21557971014492755" />
         <entry key="resources1/src/main/res/layout/video.xml" value="0.1875" />
+        <entry key="rxjava/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="sendmessage/src/main/res/layout/main.xml" value="0.16168478260869565" />
         <entry key="service/src/main/res/layout/activity_main.xml" value="0.23777173913043478" />
         <entry key="service/src/main/res/layout/bindactivity.xml" value="0.1875" />
